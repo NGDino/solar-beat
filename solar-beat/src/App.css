@@ -40,3 +40,12 @@
 .MuiIcon-fontSizeLarge{
   font-size: 85px;
 }
+
+.headLogo{
+  height: 100px;
+
+}
+
+#callToAction{
+  text-align: right;
+}
