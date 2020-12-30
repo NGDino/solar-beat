@@ -92,6 +92,7 @@ export default function Header() {
                         id="callToAction" 
                         color="secondary"
                         variant= "outlined"
+                        component = {RouterLink} to = '/estimate'
                     >
                         Solar Pulse
                     </Button>
