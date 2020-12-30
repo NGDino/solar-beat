@@ -2,6 +2,11 @@ import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {AppBar, Toolbar, Button,IconButton, Drawer, List, ListItem, ListItemText} from '@material-ui/core';
 
+import {
+    BrowserRouter as Router,
+    Link as RouterLink
+} from 'react-router-dom'
+
 import MenuIcon from '@material-ui/icons/Menu';
 
 //menu
@@ -21,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
     },
     list: {
-        width: 350,
+        width: 250,
     },
     fullList: {
         width: 'auto',
@@ -45,48 +50,70 @@ export default function Header() {
         setOpen(false)
     }
 
+    const menuList = [
+        {
+            name: "Home",
+            location: "/"
+        },
+        {
+            name: "Equipment",
+            location: "/equipment"
+        },
+        {
+            name: "Solar Estimate",
+            location: "/estimate"
+        },
+        {
+            name: "Contact Us",
+            location: "/contact"
+        },
+    ]
     
 
     return (
-        <div className={classes.root}>
-        <AppBar position="static">
-            <Toolbar>
+        <div className={classes.title}>
+            <AppBar position="static">
+                <Toolbar>
 
-                <IconButton
-                    edge="start" 
-                    className={classes.menuButton} 
-                    color="inherit" 
-                    onClick={handleDrawerOpen}
-                    aria-label="menu"
-                >
-                    <MenuIcon />
-                </IconButton>
-                
-                <div className={classes.title}>
-                    <img className="headLogo" src={Logo}/>
+                    <IconButton
+                        edge="start" 
+                        className={classes.menuButton} 
+                        color="inherit" 
+                        onClick={handleDrawerOpen}
+                        aria-label="menu"
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                    
+                    <div className={classes.title}>
+                        <img className="headLogo" src={Logo}/>
+                    </div>
+                    <Button 
+                        id="callToAction" 
+                        color="secondary"
+                        variant= "outlined"
+                    >
+                        Solar Pulse
+                    </Button>
+                </Toolbar>
+            </AppBar>
+
+            <Drawer anchor= 'left' open={open} onClose={handleDrawerClose}>
+                <div className={classes.list}>
+                    <List>
+                        {menuList.map((list) => (
+                            <ListItem
+                                button key={list.name}
+                                onClick={handleDrawerClose}
+                                component = {RouterLink} to = {list.location}
+                                >
+                            <ListItemText primary={list.name} />
+                            </ListItem>
+                        ))}
+                    </List>
                 </div>
-                <Button 
-                    id="callToAction" 
-                    color="secondary"
-                    variant= "outlined"
-                >
-                    Savings Calculator
-                </Button>
-            </Toolbar>
-        </AppBar>
-
-        <Drawer anchor= 'left' open={open} onClose={handleDrawerClose}>
-            <List>
-                {['Home', 'Equipment', 'Solar Estimate', 'Contact Us'].map((text) => (
-                    <ListItem
-                        button key={text}
-                        onClick={handleDrawerClose}
-                        >
-                    <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
-        </Drawer>
+                
+            </Drawer>
             
         </div>
     );
