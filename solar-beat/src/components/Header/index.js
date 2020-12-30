@@ -86,7 +86,7 @@ export default function Header() {
                     </IconButton>
                     
                     <div className={classes.title}>
-                        <img className="headLogo" src={Logo}/>
+                        <RouterLink to="/"><img className="headLogo" src={Logo}/></RouterLink> 
                     </div>
                     <Button 
                         id="callToAction" 
