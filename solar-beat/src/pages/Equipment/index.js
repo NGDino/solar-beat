@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react';
+import {Box, Typography, Grid} from '@material-ui/core'
 
 const Contact = () =>{
     
     return(
-        <h1>This is the Equipment page</h1>
+        <Box>
+        </Box>
 
     )
 }
