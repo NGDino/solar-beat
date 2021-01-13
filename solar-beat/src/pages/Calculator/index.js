@@ -1,9 +1,177 @@
-import React from 'react'
+import { Box, Typography, Container, TextField, FormControl, Select, MenuItem, InputLabel, Slider, Button } from '@material-ui/core'
+import React, {useState} from 'react'
+import {makeStyles} from '@material-ui/core/styles'
+
+
+//calculator JS functions
+const useStyles = makeStyles((theme) => ({
+    formControl: {
+        margin: theme.spacing(2),
+        minWidth: 250,
+    },
+    selectEmpty: {
+        marginTop: theme.spacing(2),
+    },
+    button: {
+        // display: 'block'
+    }
+}));
+
+function valuetext(value) {
+    return `$${value}`;
+}
 
 const Contact = () =>{
+//labels for slider
+    const marks = [
+        {
+            value: 0,
+            label: '$0',
+        },
+        {
+            value: 50,
+            label: '$50',
+        },
+        {
+            value: 100,
+            label: '$100',
+        },
+        {
+            value: 150,
+            label: '$150',
+        },
+        {
+            value: 200,
+            label: '$200',
+        },
+        {
+            value: 250,
+            label: '$250',
+        },
+        {
+            value: 300,
+            label: '$300',
+        },
+        {
+            value: 400,
+            label: '$400+',
+        }
+    ];
+
+    const classes = useStyles();
+
+    const [formState, setFormState] = useState({name: '', email:'', state:'', utilityCompany: '', billAmount:'', roofType: '', })
+
+    //set form state
+    const handleChange=(event)=>{
+        const {id,value} = event.target;
+
+        setFormState({
+            ...formState,
+            [id]: value
+        });
+        // console.log(formState)
+    }
+
+    //handle submit
+    const handleSolarCalc= (e) =>{
+        e.preventDefault()
+
+        console.log('formstate')
+    }
+
+
     
     return(
-        <h1>This is the Calculator page</h1>
+        <div>
+            <Container>
+                <Typography>
+                    A title and brief description will go here along wiht a sweeet background
+                </Typography>
+            </Container>
+        <Container>
+            <form onSubmit={handleSolarCalc}>
+                <TextField className={classes.formControl} id="name" label="Name" variant="filled" onChange={handleChange}>
+                </TextField>
+                <TextField className={classes.formControl} id="email" label="Email" variant="filled" onChange={handleChange}>
+                </TextField>
+                
+                <FormControl className={classes.formControl} variant="filled">
+                    <InputLabel id="state-label">State of Residence</InputLabel>
+                    <Select
+                        labelId="state-label"
+                        id='state'
+                        value={formState.state}
+                        onChange={handleChange}
+                    >
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        <MenuItem value='ca'>CA</MenuItem>
+                        <MenuItem value='nv'>NV</MenuItem>
+                        {/* <MenuItem value={30}>Thirty</MenuItem> */}
+                    </Select>
+                </FormControl>
+                <FormControl className={classes.formControl} variant="filled">
+                <InputLabel id="utility-company-label">Utility Company</InputLabel>
+
+                    <Select
+                        labelId="utility-company-label"
+                        name="utilityCompany"
+                        value={formState.utilityCompany}
+                        onChange={handleChange}
+                    >
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={'pge'}>PG&E</MenuItem>
+                        <MenuItem value={'sdge'}>SDG&E</MenuItem>
+                        <MenuItem value={'edison'}>SCE</MenuItem>
+                        <MenuItem value={'nevada'}>NV Energy</MenuItem>
+                    </Select>
+                </FormControl>
+                <Typography id="discrete-slider" gutterBottom>
+                    Average Bill
+                </Typography>
+                <Slider
+                    defaultValue={125}
+                    getAriaValueText={valuetext}
+                    aria-labelledby="discrete-slider"
+                    valueLabelDisplay="auto"
+                    step={1}
+                    marks={marks}
+                    min={0}
+                    max={400}
+                    // value={formState.billAmount}
+                    onChange={handleChange}
+                />
+                <FormControl className={classes.formControl} variant="filled">
+                <InputLabel id="utility-company-label">Roof Type</InputLabel>
+
+                    <Select
+                        labelId="utility-company-label"
+                        name="utilityCompany"
+                        value={formState.utilityCompany}
+                        onChange={handleChange}
+                    >
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={'pge'}>PG&E</MenuItem>
+                        <MenuItem value={'sdge'}>SDG&E</MenuItem>
+                        <MenuItem value={'edison'}>SCE</MenuItem>
+                        <MenuItem value={'nevada'}>NV Energy</MenuItem>
+                    </Select>
+                </FormControl>
+                <br/>
+                <Button variant="contained" color="primary" type='submit'>
+                    Solar Pulse Check
+                </Button>
+
+            </form>
+        </Container>
+            
+        </div>
 
     )
 }
