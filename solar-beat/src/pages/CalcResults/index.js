@@ -1,8 +1,14 @@
-import react from 'react'
+import react, {useEffect, useState} from 'react'
 
 
-const CalcResults = (formState) =>{
-    console.log('props', formState)
+const CalcResults = () =>{
+
+    const data = JSON.parse(localStorage.getItem('customer-data'));
+    console.log('customer-data', data)
+
+    if(data.name === ''){
+        
+    }
     
 
     return(

@@ -1,5 +1,5 @@
 import { Typography, Container, TextField, FormControl, Select, MenuItem, InputLabel, Slider, Button } from '@material-ui/core'
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {makeStyles} from '@material-ui/core/styles'
 
 
@@ -28,6 +28,10 @@ function valuetext(value) {
 }
 
 const Contact = () =>{
+
+    useEffect(() => {
+        localStorage.setItem('customer-data', JSON.stringify(formState))
+    })
 //labels for slider
 // console.log('does this owrk')
     const marks = [
