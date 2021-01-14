@@ -1,8 +1,5 @@
 import React from 'react';
-import {CssBaseline, Typography, Box, Grid, Card, CardActionArea, CardActions, CardContent, CardMedia, Button} from '@material-ui/core'
-import FlashOnIcon from '@material-ui/icons/FlashOn';
-import Brightness5Icon from '@material-ui/icons/Brightness5';
-import BuildIcon from '@material-ui/icons/Build';
+import {CssBaseline, Typography, Grid, Card, CardActionArea, CardContent, } from '@material-ui/core'
 import {makeStyles} from "@material-ui/core/styles"
 import solarPanels from '../../assets/images/solarPanel.png';
 import calculator from '../../assets/images/Calculator.png';

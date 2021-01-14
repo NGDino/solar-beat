@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Container, Typography, Grid, Box, Paper, Card, CardContent, CardMedia, List, ListItem} from '@material-ui/core'
+import {Container, Typography, Grid, Paper, Card, CardContent, CardMedia, List, ListItem} from '@material-ui/core'
 import {makeStyles} from '@material-ui/core/styles'
 
 import SolarGuy from '../../assets/images/home-banner.png';

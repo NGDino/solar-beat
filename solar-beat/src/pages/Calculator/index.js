@@ -1,4 +1,4 @@
-import { Box, Typography, Container, TextField, FormControl, Select, MenuItem, InputLabel, Slider, Button } from '@material-ui/core'
+import { Typography, Container, TextField, FormControl, Select, MenuItem, InputLabel, Slider, Button } from '@material-ui/core'
 import React, {useState} from 'react'
 import {makeStyles} from '@material-ui/core/styles'
 
@@ -60,18 +60,21 @@ const Contact = () =>{
 
     const classes = useStyles();
 
-    const [formState, setFormState] = useState({name: '', email:'', state:'', utilityCompany: '', billAmount:'', roofType: '', })
+
+    const [formState, setFormState] = useState({name: '', email:'', residence:'', utilityCompany: '', billAmount:'', roofType:'' })
 
     //set form state
     const handleChange=(event)=>{
-        const {id,value} = event.target;
+        const {name ,value} = event.target;
 
         setFormState({
             ...formState,
-            [id]: value
+            [name]: value
         });
-        // console.log(formState)
+        console.log(formState)
     }
+
+    
 
     //handle submit
     const handleSolarCalc= (e) =>{
@@ -91,9 +94,9 @@ const Contact = () =>{
             </Container>
         <Container>
             <form onSubmit={handleSolarCalc}>
-                <TextField className={classes.formControl} id="name" label="Name" variant="filled" onChange={handleChange}>
+                <TextField className={classes.formControl} id="name" name="name" label="Name" variant="filled" onChange={handleChange}>
                 </TextField>
-                <TextField className={classes.formControl} id="email" label="Email" variant="filled" onChange={handleChange}>
+                <TextField className={classes.formControl} id="email" name="email" label="Email" variant="filled" onChange={handleChange}>
                 </TextField>
                 
                 <FormControl className={classes.formControl} variant="filled">
@@ -101,14 +104,15 @@ const Contact = () =>{
                     <Select
                         labelId="state-label"
                         id='state'
-                        value={formState.state}
+                        name="residence"
+                        value= {formState.residence}
                         onChange={handleChange}
                     >
-                        <MenuItem value="">
+                        <MenuItem value={""}>
                             <em>None</em>
                         </MenuItem>
-                        <MenuItem value='ca'>CA</MenuItem>
-                        <MenuItem value='nv'>NV</MenuItem>
+                        <MenuItem value={'ca'}>CA</MenuItem>
+                        <MenuItem value={'nv'}>NV</MenuItem>
                         {/* <MenuItem value={30}>Thirty</MenuItem> */}
                     </Select>
                 </FormControl>
@@ -118,7 +122,7 @@ const Contact = () =>{
                     <Select
                         labelId="utility-company-label"
                         name="utilityCompany"
-                        value={formState.utilityCompany}
+                        value= {formState.utilityCompany}
                         onChange={handleChange}
                     >
                         <MenuItem value="">
@@ -133,7 +137,7 @@ const Contact = () =>{
                 <Typography id="discrete-slider" gutterBottom>
                     Average Bill
                 </Typography>
-                <Slider
+                {/* <Slider
                     defaultValue={125}
                     getAriaValueText={valuetext}
                     aria-labelledby="discrete-slider"
@@ -142,25 +146,26 @@ const Contact = () =>{
                     marks={marks}
                     min={0}
                     max={400}
-                    // value={formState.billAmount}
-                    onChange={handleChange}
-                />
+                    value={value}
+                    onChangeCommitted={handleSlide}
+                /> */}
                 <FormControl className={classes.formControl} variant="filled">
-                <InputLabel id="utility-company-label">Roof Type</InputLabel>
+                <InputLabel id="roofType-label">Roof Type</InputLabel>
 
                     <Select
-                        labelId="utility-company-label"
-                        name="utilityCompany"
-                        value={formState.utilityCompany}
+                        labelId="roofType-label"
+                        name="roofType"
+                        value={formState.roofType}
                         onChange={handleChange}
                     >
                         <MenuItem value="">
                             <em>None</em>
                         </MenuItem>
-                        <MenuItem value={'pge'}>PG&E</MenuItem>
-                        <MenuItem value={'sdge'}>SDG&E</MenuItem>
-                        <MenuItem value={'edison'}>SCE</MenuItem>
-                        <MenuItem value={'nevada'}>NV Energy</MenuItem>
+                        <MenuItem value={'composite'}>Composite</MenuItem>
+                        <MenuItem value={'cementTile'}>Cement Tyle</MenuItem>
+                        <MenuItem value={'metal'}>Metal</MenuItem>
+                        <MenuItem value={'flat'}>Flat</MenuItem>
+                        <MenuItem value={'terracotta'}>terracotta</MenuItem>
                     </Select>
                 </FormControl>
                 <br/>

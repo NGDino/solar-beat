@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import {AppBar, Toolbar, Button,IconButton, Drawer, List, ListItem, ListItemText} from '@material-ui/core';
 
 import {
-    BrowserRouter as Router,
+    
     Link as RouterLink
 } from 'react-router-dom'
 
@@ -86,7 +86,7 @@ export default function Header() {
                     </IconButton>
                     
                     <div className={classes.title}>
-                        <RouterLink to="/"><img className="headLogo" src={Logo}/></RouterLink> 
+                        <RouterLink to="/"><img className="headLogo" alt="SolarBeat Logo"src={Logo}/></RouterLink> 
                     </div>
                     <Button 
                         id="callToAction" 
