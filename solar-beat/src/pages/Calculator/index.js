@@ -3,6 +3,12 @@ import React, {useState} from 'react'
 import {makeStyles} from '@material-ui/core/styles'
 
 
+import {
+    
+    Link as RouterLink
+} from 'react-router-dom'
+
+
 //calculator JS functions
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -23,6 +29,7 @@ function valuetext(value) {
 
 const Contact = () =>{
 //labels for slider
+// console.log('does this owrk')
     const marks = [
         {
             value: 0,
@@ -61,27 +68,41 @@ const Contact = () =>{
     const classes = useStyles();
 
 
-    const [formState, setFormState] = useState({name: '', email:'', residence:'', utilityCompany: '', billAmount:'', roofType:'' })
+    const [formState, setFormState] = useState({name: '', email:'', residence:'', utilityCompany: '', billAmount: 0, roofType:'' })
 
     //set form state
-    const handleChange=(event)=>{
-        const {name ,value} = event.target;
-
-        setFormState({
-            ...formState,
-            [name]: value
-        });
-        console.log(formState)
-    }
-
+const handleChange=(event)=>{
     
+    const {name ,value} = event.target;
+
+    setFormState({
+        ...formState,
+        [name]: value
+    });
+    console.log(formState)
+    
+}
+
+
 
     //handle submit
     const handleSolarCalc= (e) =>{
         e.preventDefault()
 
-        console.log('formstate')
+        console.log('formstate', formState)
     }
+
+    //slider val
+    const [val, setVal] = useState(0)
+    const sliderValue = (event, value) => {
+        setVal(value)
+        // console.log('sliderval', value)
+        setFormState({
+            ...formState,
+            billAmount: value
+        })
+    }
+
 
 
     
@@ -137,7 +158,7 @@ const Contact = () =>{
                 <Typography id="discrete-slider" gutterBottom>
                     Average Bill
                 </Typography>
-                {/* <Slider
+                <Slider
                     defaultValue={125}
                     getAriaValueText={valuetext}
                     aria-labelledby="discrete-slider"
@@ -146,9 +167,11 @@ const Contact = () =>{
                     marks={marks}
                     min={0}
                     max={400}
-                    value={value}
-                    onChangeCommitted={handleSlide}
-                /> */}
+                    name="billAmount"
+                    onChange={sliderValue}
+                    // onChange={}
+                    // onChangeCommitted={handleChange}
+                />
                 <FormControl className={classes.formControl} variant="filled">
                 <InputLabel id="roofType-label">Roof Type</InputLabel>
 
@@ -165,11 +188,11 @@ const Contact = () =>{
                         <MenuItem value={'cementTile'}>Cement Tyle</MenuItem>
                         <MenuItem value={'metal'}>Metal</MenuItem>
                         <MenuItem value={'flat'}>Flat</MenuItem>
-                        <MenuItem value={'terracotta'}>terracotta</MenuItem>
+                        <MenuItem value={'terracotta'}>Terracotta</MenuItem>
                     </Select>
                 </FormControl>
                 <br/>
-                <Button variant="contained" color="primary" type='submit'>
+                <Button variant="contained" color="primary" type='submit' component = {RouterLink} to = '/results' children={formState}>
                     Solar Pulse Check
                 </Button>
 
