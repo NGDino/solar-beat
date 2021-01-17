@@ -27,7 +27,7 @@ function valuetext(value) {
     return `$${value}`;
 }
 
-const Contact = () =>{
+const Calculator = () =>{
 
     useEffect(() => {
         localStorage.setItem('customer-data', JSON.stringify(formState))
@@ -75,17 +75,17 @@ const Contact = () =>{
     const [formState, setFormState] = useState({name: '', email:'', residence:'', utilityCompany: '', billAmount: 0, roofType:'' })
 
     //set form state
-const handleChange=(event)=>{
-    
-    const {name ,value} = event.target;
+    const handleChange=(event)=>{
+        
+        const {name ,value} = event.target;
 
-    setFormState({
-        ...formState,
-        [name]: value
-    });
-    console.log(formState)
-    
-}
+        setFormState({
+            ...formState,
+            [name]: value
+        });
+        // console.log(formState)
+        
+    }
 
 
 
@@ -93,7 +93,7 @@ const handleChange=(event)=>{
     const handleSolarCalc= (e) =>{
         e.preventDefault()
 
-        console.log('formstate', formState)
+        // console.log('formstate', formState)
     }
 
     //slider val
@@ -103,7 +103,7 @@ const handleChange=(event)=>{
         // console.log('sliderval', value)
         setFormState({
             ...formState,
-            billAmount: value
+            billAmount: val
         })
     }
 
@@ -207,4 +207,4 @@ const handleChange=(event)=>{
 
     )
 }
-export default Contact;
+export default Calculator;

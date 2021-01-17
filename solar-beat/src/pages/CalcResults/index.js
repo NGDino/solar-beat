@@ -1,4 +1,6 @@
-import react, {useEffect, useState} from 'react'
+import react from 'react';
+import {Redirect} from 'react-router-dom';
+import Snapshot from '../../components/Results';
 
 
 const CalcResults = () =>{
@@ -7,12 +9,14 @@ const CalcResults = () =>{
     console.log('customer-data', data)
 
     if(data.name === ''){
-        
+        return <Redirect to= '/estimate'/>
     }
     
 
     return(
-        <div> <h1>YOU MADE IT DUDDDEEEE</h1></div>
+        <div>
+            <Snapshot/>
+        </div>
     )
 }
 
