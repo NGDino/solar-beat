@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Box, FormControl, InputLabel, MenuItem, Select} from '@material-ui/core';
+import {Box, FormControl, InputLabel, MenuItem, Select, TextField, FormControlLabel, FormLabel, Radio, RadioGroup, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
@@ -14,28 +14,44 @@ const useStyles = makeStyles((theme) => ({
 
 const Contact = () =>{
     const classes = useStyles();
-    const [help, setHelp] = useState('');
+    const [value, setValue] = useState('female');
 
     const handleChange = (event) => {
-        setHelp(event.target.value);
-        console.log('help', help)
+        setValue(event.target.value);
     };
 
     return(
         <Box>
             <h1>How can we Help you</h1>
-            <FormControl className={classes.formControl}>
-                <InputLabel id="how-help-label">I would like...</InputLabel>
-                <Select
-                    labelId="how-help-label"
-                    id="how-help"
-                    value={help}
-                    onChange={handleChange}
-                    >
-                        <MenuItem value={'info'}>I'd like more information</MenuItem>
-                        <MenuItem value={'quote'}>Get a Quote</MenuItem>
-                </Select>
-            </FormControl>
+            <form>
+                <TextField className={classes.formControl} id="name" name="name" label="Name" variant="filled" >
+                </TextField>
+                <TextField className={classes.formControl} id="email" name="email" label="Email" variant="filled" >
+                </TextField>
+                <TextField className={classes.formControl} id="address" name="address" label="Address" variant="filled" >
+                </TextField>
+                <TextField className={classes.formControl} id="city" name="city" label="City" variant="filled" >
+                </TextField>
+                <TextField className={classes.formControl} id="zip" name="zip" label="Zip Code" variant="filled" >
+                </TextField>
+                <TextField className={classes.formControl} id="phone" name="phone" label="Phone" variant="filled" >
+                </TextField>
+                <TextField className={classes.formControl} id="email" name="email" label="Email" variant="filled" >
+                </TextField>
+                <FormControl component="fieldset">
+                <FormLabel component="legend">Do You Own Your Home?</FormLabel>
+                <RadioGroup aria-label="owner" name="owner1" value={value} onChange={handleChange}>
+                    <FormControlLabel value="owner1" control={<Radio />} label="I own" />
+                    <FormControlLabel value="rent" control={<Radio />} label="I am renting" />
+                </RadioGroup>
+                </FormControl>
+                <br/>
+                <Button variant="contained" color="primary" type='submit' >
+                    Request a Quote
+                </Button>
+
+            </form>
+            
         </Box>
         
 
