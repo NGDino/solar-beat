@@ -8,7 +8,8 @@ const CalcResults = () =>{
     const data = JSON.parse(localStorage.getItem('customer-data'));
     console.log('customer-data', data)
 
-    if(data.name === '' || data.billAmount ==0 ){
+    if(data.name === '' || data.billAmount == 
+    0 ){
         return <Redirect to= '/estimate'/>
     }
     
