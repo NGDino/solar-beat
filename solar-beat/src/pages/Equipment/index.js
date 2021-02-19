@@ -1,20 +1,32 @@
 import React, {useState} from 'react';
-import {Container, Typography, Grid, Paper, Card, CardContent, CardMedia, List, ListItem} from '@material-ui/core'
+import {Container, Typography, Grid, Box, Card, CardContent, CardMedia, List, ListItem} from '@material-ui/core'
+import { shadows } from '@material-ui/system';
 import {makeStyles} from '@material-ui/core/styles'
 
-import SolarGuy from '../../assets/images/home-banner.png';
+import Hero from '../../assets/images/solarhouse.jpg';
 import Panels from '../../assets/images/rec-panels.jpg';
 import Inverter from '../../assets/images/inverters.png';
 import Batteries from '../../assets/images/batteries.png';
-import Mounts from '../../assets/images/ground-vs-roof.jpg'
+import Mounts from '../../assets/images/ground-vs-roof.jpg';
 
 //style to make Paper opacity, centered border
 
 const useStyles= makeStyles
 ({
-    container : {
-        backgroundImage: `url(${SolarGuy})`,
-        height: 600
+    hero : {
+        backgroundImage: `url(${Hero})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        height: '45vh',
+        padding: '20 px',
+        marginBottom: '20px'
+        
+    },
+    
+    bannerText: {
+        backgroundColor: '#d3d3d3CC',
+        padding: '10px',
+        margin:'2em',
 
     },
     container2: {
@@ -34,25 +46,30 @@ const Contact = () =>{
     
     return(
         <div>
-            <Container className={classes.container} maxWidth = 'false' >
-                <Grid container>
-                    <Grid item xs={12} md={6}>
-                    <Paper>
-                        <Typography variant='h2' component='h2'>
-                            Compare Options and Choose
-                        </Typography>
-                        <Typography variant='p' component='p'>
-                            At SolarBeat we understand there are many options out there for solar.  We partnered with top rated local installers that carry the best equipment brands in the 
-                            industry to give you the freedom to choose what works for your home and budget.  Don't get sold on what a salesman is offering pick the perfect solution for your 
-                            solar journey.
-                        </Typography>
-                    </Paper>
+            
+            <Grid 
+                container 
+                spacing={0} 
+                justify='center'
+                direction='column'
+                className={classes.hero}>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <Box component='div' boxShadow={2} className={classes.bannerText}>
+                            <Typography variant='h4' component='h2'>
+                                Compare Options and Choose
+                            </Typography>
+                            <Typography variant='p' component='p'>
+                                At SolarBeat we understand there are many options out there for solar.  We partnered with top rated local installers that carry the best equipment brands in the 
+                                industry to give you the freedom to choose what works for your home and budget.  Don't get sold on what a salesman is offering pick the perfect solution for your 
+                                solar journey.
+                            </Typography>
+                        </Box>
                         
                     </Grid>
                 </Grid>
                 
                 
-            </Container>
+            
             <Container className=''>
             <Grid container spacing={4} >
                 <Grid item xs={12} md={5}>

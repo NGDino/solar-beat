@@ -1,16 +1,41 @@
 import React from 'react';
-import {CssBaseline, Typography, Grid, Card, CardActionArea, CardContent, } from '@material-ui/core'
+import {CssBaseline, Typography, Grid, Card, CardActionArea, CardContent, Box } from '@material-ui/core'
 import {makeStyles} from "@material-ui/core/styles"
 import solarPanels from '../../assets/images/solarPanel.png';
 import calculator from '../../assets/images/Calculator.png';
 import battery from '../../assets/images/Battery.png'
 import ecohouse from '../../assets/images/eco-house.png'
+import Hero from '../../assets/images/solarhouse.jpg';
 
 const useStyles = makeStyles({
+    root:{
+        boxSizing: 'border-box'
+    },
+    hero : {
+        backgroundImage: `url(${Hero})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        height: '45vh',
+        padding: '20 px',
+        marginBottom: '20px'
+        
+    },
+    
+    bannerText: {
+        backgroundColor: '#d3d3d3CC',
+        padding: '10px',
+        margin:'2em',
+
+    },
     iconStyle: {
         fontSize: '85px',
         marginTop: '20px'
+    },
+    cardContainer: {
+        padding: '8px',
+        
     }
+
     
 })
 
@@ -20,25 +45,32 @@ const Home= () =>{
 
     return(
         <React.Fragment>
-            <CssBaseline />
+            {/* <CssBaseline /> */}
             {/* <Box component="div" > */}
-                <Grid container spacing={3} style={{ backgroundColor: '#eee',  }}>
-                    <Grid item xs={12} sm={6}>
-                        <img src={solarPanels} alt ={''}/>
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                        <Typography variant="h4" gutterBottom>
-                            Check Your Solar Pulse with SolarBeat
-                        </Typography>
-                        <Typography variant="subtitle1"   gutterBottom>
-                            Solar doesn't work for everyone. Use our free tool to check your homes solar fitness without the sales pitch or giving out your personal information.  
-                        </Typography> 
+                <Grid 
+                container 
+                spacing={0} 
+                justify='center'
+                align='center'
+                direction='column'
+                className={classes.hero}>
+                    
+                    <Grid item xs={12} sm={6} md={4} >
+                        <Box component='div' boxShadow={3} className={classes.bannerText}>
+                            <Typography variant='h4' gutterBottom>
+                                Check Your Solar Pulse with SolarBeat
+                            </Typography>
+                            <Typography variant="subtitle1"   gutterBottom>
+                                Solar doesn't work for everyone. Use our free tool to check your homes solar fitness without the sales pitch or giving out your personal information.  
+                            </Typography>
+                        </Box>
+                        
                     </Grid>
 
                 </Grid>
             {/* </Box> */}
-            <Grid container spacing={3} style={{ backgroundColor: '#fff',  }}>
-                <Grid item xs={12} sm={4}>
+            <Grid container spacing={3} className={classes.cardContainer} align='center' justify='center' direction='row'>
+                <Grid item item xs={12} sm={6} md={3}>
                     <Card>
                         <CardActionArea>
                             <img src={calculator} alt='calculator illustration'/>
@@ -55,7 +87,7 @@ const Home= () =>{
                     </Card>
                 </Grid>
 
-                <Grid item xs={12} sm={4}>
+                <Grid item xs={12} sm={6} md={3} >
                     <Card>
                         <CardActionArea>
                             <img src={battery} alt='green battery illustration'/>
@@ -72,7 +104,7 @@ const Home= () =>{
                     </Card>
                 </Grid>
 
-                <Grid item xs={12} sm={4}>
+                <Grid item xs={12} sm={6} md={3}>
                     <Card>
                         <CardActionArea>
                             <img src={ecohouse} alt='Green Energy House'/>
