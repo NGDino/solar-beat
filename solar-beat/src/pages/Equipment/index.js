@@ -26,7 +26,7 @@ const useStyles= makeStyles
     bannerText: {
         backgroundColor: '#d3d3d3CC',
         padding: '10px',
-        marginLeft:'2em',
+        margin:'2em',
 
     },
     container2: {
@@ -53,7 +53,7 @@ const Contact = () =>{
                 justify='center'
                 direction='column'
                 className={classes.hero}>
-                    <Grid item xs={12} md={4}>
+                    <Grid item xs={12} sm={6} md={4}>
                         <Box component='div' boxShadow={2} className={classes.bannerText}>
                             <Typography variant='h4' component='h2'>
                                 Compare Options and Choose
