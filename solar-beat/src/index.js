@@ -4,11 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {ThemeProvider, createMuiTheme} from '@material-ui/core';
-import {orange} from '@material-ui/core/colors'
+import {yellow, amber} from '@material-ui/core/colors'
 
 const theme = createMuiTheme({
+
   palette:{
-    primary: orange
+    primary: yellow,
+    secondary: amber
   }
 })
 
