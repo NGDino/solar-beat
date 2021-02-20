@@ -33,7 +33,9 @@ const useStyles = makeStyles({
     },
     cardContainer: {
         padding: '8px',
-        
+    },
+    cardStyle : {
+        height: '45vh'
     }
 
     
@@ -70,8 +72,8 @@ const Home= () =>{
                 </Grid>
             {/* </Box> */}
             <Grid container spacing={3} className={classes.cardContainer} align='center' justify='center' direction='row'>
-                <Grid item item xs={12} sm={6} md={3}>
-                    <Card>
+                <Grid item item xs={12} sm={6} md={3} >
+                    <Card className={classes.cardStyle}>
                         <CardActionArea>
                             <img src={calculator} alt='calculator illustration'/>
                             <CardContent>
@@ -88,7 +90,7 @@ const Home= () =>{
                 </Grid>
 
                 <Grid item xs={12} sm={6} md={3} >
-                    <Card>
+                    <Card className={classes.cardStyle}>
                         <CardActionArea>
                             <img src={battery} alt='green battery illustration'/>
                             <CardContent>
@@ -105,7 +107,7 @@ const Home= () =>{
                 </Grid>
 
                 <Grid item xs={12} sm={6} md={3}>
-                    <Card>
+                    <Card className={classes.cardStyle}>
                         <CardActionArea>
                             <img src={ecohouse} alt='Green Energy House'/>
                             <CardContent>
