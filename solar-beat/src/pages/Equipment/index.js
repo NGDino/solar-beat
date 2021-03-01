@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import {Container, Typography, Grid, Box, Card, CardContent, CardMedia, List, ListItem} from '@material-ui/core'
+import {Container, Typography, Grid, Box, Card, CardContent, CardMedia, List, ListItem, ListItemIcon} from '@material-ui/core'
 import { shadows } from '@material-ui/system';
 import {makeStyles} from '@material-ui/core/styles'
+import EcoIcon from '@material-ui/icons/Eco'
 
 import Hero from '../../assets/images/solarhouse.jpg';
 import Panels from '../../assets/images/rec-panels.jpg';
@@ -17,7 +18,7 @@ const useStyles= makeStyles
         backgroundImage: `url(${Hero})`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
-        height: '45vh',
+        height: '85vh',
         padding: '20 px',
         marginBottom: '20px'
         
@@ -25,8 +26,8 @@ const useStyles= makeStyles
     
     bannerText: {
         backgroundColor: '#d3d3d3CC',
-        padding: '10px',
-        margin:'2em',
+        margin:'1em',
+        padding: '1em 1em 1em 1em',
 
     },
     container2: {
@@ -45,7 +46,7 @@ const Contact = () =>{
     const classes = useStyles();
     
     return(
-        <div>
+        <Box bgcolor="secondary.light">
             
             <Grid 
                 container 
@@ -54,7 +55,7 @@ const Contact = () =>{
                 direction='column'
                 className={classes.hero}>
                     <Grid item xs={12} sm={6} md={4}>
-                        <Box component='div' boxShadow={2} className={classes.bannerText}>
+                        <Box component='div' boxShadow={3} border={4} borderRadius={26} borderColor="grey.700" className={classes.bannerText}>
                             <Typography variant='h4' component='h2'>
                                 Compare Options and Choose
                             </Typography>
@@ -89,18 +90,37 @@ const Contact = () =>{
                                 <Typography variant="body2" color="textSecondary" component="p">
                                     Compare top of line panels including high efficiancy panels from industry leaders such as:
                                     <List>
-                                        <ListItem>REC</ListItem>
-                                        <ListItem>SunPower</ListItem>
-                                        <ListItem>LG</ListItem>
-                                        <ListItem>Panasonic</ListItem>
-                                        
+                                        <ListItem>
+                                            <ListItemIcon>
+                                                <EcoIcon />
+                                            </ListItemIcon>
+                                            REC
+                                        </ListItem>
+                                        <ListItem>
+                                            <ListItemIcon>
+                                                <EcoIcon />
+                                            </ListItemIcon>
+                                            SunPower
+                                        </ListItem>
+                                        <ListItem>
+                                            <ListItemIcon>
+                                                <EcoIcon />
+                                            </ListItemIcon>
+                                            LG
+                                        </ListItem>
+                                        <ListItem>
+                                            <ListItemIcon>
+                                                <EcoIcon />
+                                            </ListItemIcon>
+                                            Panasonic
+                                        </ListItem>
                                     </List>
                                 </Typography>
                             </CardContent>
                         {/* </CardActionArea> */}
 
                     </Card>
-                   
+                
                 </Grid>
                 <Grid item xs={12} md={5}>
                     <Card className={classes.card}>
@@ -171,7 +191,7 @@ const Contact = () =>{
             </Grid>
             </Container>
             
-        </div>
+        </Box>
         
 
     )
