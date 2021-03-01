@@ -18,6 +18,7 @@ import Logo from '../../assets/solarbeat.png'
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
+    
     },
     menuButton: {
         marginRight: theme.spacing(2),
@@ -31,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
     fullList: {
         width: 'auto',
     },
+    logo: {
+        height: "95px"
+    }
 
     
 }));
@@ -71,7 +75,7 @@ export default function Header() {
     
 
     return (
-        <div className={classes.title}>
+        <div className={classes.title} >
             <AppBar position="static">
                 <Toolbar>
 
@@ -86,7 +90,7 @@ export default function Header() {
                     </IconButton>
                     
                     <div className={classes.title}>
-                        <RouterLink to="/"><img className="headLogo" alt="SolarBeat Logo"src={Logo}/></RouterLink> 
+                        <RouterLink to="/"><img className= {classes.logo} alt="SolarBeat Logo"src={Logo}/></RouterLink> 
                     </div>
                     <Button 
                         id="callToAction" 

@@ -9,8 +9,14 @@ import {yellow, amber} from '@material-ui/core/colors'
 const theme = createMuiTheme({
 
   palette:{
-    primary: yellow,
-    secondary: amber
+    primary: {
+      main: '#e0e0e0'
+    },
+    secondary: {
+      main: '#dd2c00',
+      light: '#fff176'
+    },
+  
   }
 })
 

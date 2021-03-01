@@ -3,6 +3,7 @@ import {Typography, Grid, Box } from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import {borders} from '@material-ui/system';
 import heroImage from '../../assets/images/solarhouse.jpg';
+import animateCss from 'animate.min.css';
 
 
 const useStyles = makeStyles({
@@ -14,9 +15,9 @@ const useStyles = makeStyles({
         backgroundImage: `url(${heroImage})`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
-        height: '45vh',
+        height: '85vh',
         padding: '20 px',
-        marginBottom: '20px'
+        // marginBottom: '20px'
         
     },
     
