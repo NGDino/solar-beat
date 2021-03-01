@@ -38,7 +38,10 @@ const useStyles= makeStyles
         objectFit: 'contain'
     },
     card: {
-        height: 700
+        height: 700,
+        boxShadow: 3,
+        border: '5px solid grey',
+        borderRadius: 26,
     }
 })
 
@@ -73,10 +76,13 @@ const Contact = () =>{
             
             <Container className=''>
             <Grid container spacing={4} >
-                <Grid item xs={12} md={5}>
-                    <Card className={classes.card}>
+                
+                <Grid item xs={12} md={5}  >
+                <Box >
+                <Card className={classes.card} borderRadius={26} >
                         {/* <CardActionArea> */}
                             <CardMedia
+                            borderRadius={26} 
                             component="img"
                             alt="Different Solar Panels"
                             height="400"
@@ -120,6 +126,9 @@ const Contact = () =>{
                         {/* </CardActionArea> */}
 
                     </Card>
+
+                </Box>
+                    
                 
                 </Grid>
                 <Grid item xs={12} md={5}>
