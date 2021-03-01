@@ -3,7 +3,6 @@ import {Typography, Grid, Box } from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import {borders} from '@material-ui/system';
 import heroImage from '../../assets/images/solarhouse.jpg';
-import animateCss from 'animate.min.css';
 
 
 const useStyles = makeStyles({
