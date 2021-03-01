@@ -22,7 +22,10 @@ const useStyles = makeStyles({
     },
     cardStyle : {
         height: '65vh',
-        padding: '1em'
+        padding: '1em',
+        boxShadow: '0 5px 5px 4px',
+        border: '5px solid grey',
+        borderRadius: 26,
     }
 
     

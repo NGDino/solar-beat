@@ -20,7 +20,8 @@ const useStyles= makeStyles
         backgroundSize: 'cover',
         height: '85vh',
         padding: '20 px',
-        marginBottom: '20px'
+        marginBottom: '20px',
+        
         
     },
     
@@ -28,6 +29,7 @@ const useStyles= makeStyles
         backgroundColor: '#d3d3d3CC',
         margin:'1em',
         padding: '1em 1em 1em 1em',
+        boxShadow: '0 5px 5px 4px'
 
     },
     container2: {
@@ -39,7 +41,7 @@ const useStyles= makeStyles
     },
     card: {
         height: 700,
-        boxShadow: 3,
+        boxShadow: '0 5px 5px 4px',
         border: '5px solid grey',
         borderRadius: 26,
     }
