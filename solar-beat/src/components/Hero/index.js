@@ -1,7 +1,6 @@
 import React from 'react';
 import {Typography, Grid, Box } from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
-import {borders} from '@material-ui/system';
 import heroImage from '../../assets/images/solarhouse.jpg';
 
 
@@ -40,8 +39,9 @@ const Hero = () => {
         container 
         spacing={0} 
         justify='center'
-        align='center'
+        alignContent='flex-start'
         direction='column'
+        align='center'
         className={classes.hero}>
             
             <Grid item xs={12} sm={6} md={4} className= {classes.border}>

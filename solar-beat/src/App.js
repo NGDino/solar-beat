@@ -16,9 +16,7 @@ import Equipment from './pages/Equipment';
 import Calculator from './pages/Calculator';
 import Contact from './pages/Contact';
 import CalcResults from './pages/CalcResults';
-import {ThemeProvider, createMuiTheme} from '@material-ui/core';
-import {orange} from '@material-ui/core/colors'
-
+import Footer from './components/Footer'
 // const theme = createMuiTheme({
 //   palette:{
 //     primary: orange
@@ -39,7 +37,7 @@ function App() {
           <Route exact path = '/contact'  component = {Contact} />
           <Route exact path = '/results'  component = {CalcResults} />
         </Switch>
-        
+        <Footer/>
         {/* </ThemeProvider> */}
       </Router>
       

@@ -1,11 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {AppBar, Toolbar, Button,IconButton, Drawer, List, ListItem, ListItemText} from '@material-ui/core';
 
-import {
-    
-    Link as RouterLink
-} from 'react-router-dom'
+import { Link as RouterLink } from 'react-router-dom'
 
 import MenuIcon from '@material-ui/icons/Menu';
 
@@ -77,7 +74,7 @@ export default function Header() {
 
     return (
         <div className={classes.title} >
-            <AppBar position="static">
+            <AppBar position="sticky">
                 <Toolbar>
 
                     <IconButton

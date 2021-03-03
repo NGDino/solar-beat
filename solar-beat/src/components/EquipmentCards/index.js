@@ -3,12 +3,10 @@ import {Container, Typography, Grid, Box, Card, CardContent, CardMedia, List, Li
 import {makeStyles} from "@material-ui/core/styles";
 
 import EcoIcon from '@material-ui/icons/Eco'
-import Hero from '../../assets/images/solarhouse.jpg';
 import Panels from '../../assets/images/rec-panels.jpg';
 import Inverter from '../../assets/images/inverters.png';
 import Batteries from '../../assets/images/batteries.png';
 import Mounts from '../../assets/images/ground-vs-roof.jpg';
-
 
 const useStyles= makeStyles({
     container2: {
@@ -26,13 +24,11 @@ const useStyles= makeStyles({
     }
 })
 
-
 const EquipmentCards = () => {
     const classes = useStyles();
     return(
         <Container className=''>
                 <Grid container spacing={4} >
-                    
                     <Grid item xs={12} md={5}  >
                     <Box >
                     <Card className={classes.card} borderRadius={26} >

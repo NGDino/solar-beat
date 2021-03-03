@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {ThemeProvider, createMuiTheme} from '@material-ui/core';
-import {yellow, amber} from '@material-ui/core/colors'
 
 const theme = createMuiTheme({
 
@@ -24,7 +23,6 @@ ReactDOM.render(
   <ThemeProvider theme={theme}>
     <App />
   </ThemeProvider>,
-    
   document.getElementById('root')
 );
 

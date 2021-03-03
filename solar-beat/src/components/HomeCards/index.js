@@ -18,7 +18,8 @@ const HomeCards = () => {
             marginTop: '20px'
         },
         cardContainer: {
-            padding: '8px',
+            padding: '1em 10px 25px 10px',
+            display: 'block'
         },
         cardStyle : {
             height: '65vh',
