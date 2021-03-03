@@ -19,7 +19,6 @@ const HomeCards = () => {
         },
         cardContainer: {
             padding: '1em 10px 25px 10px',
-            display: 'block'
         },
         cardStyle : {
             height: '65vh',
@@ -34,7 +33,7 @@ const HomeCards = () => {
     return(
         <Box bgcolor='secondary.light'>
                 <Grid container spacing={3} className={classes.cardContainer} align='center' justify='center' direction='row' >
-                    <Grid item item xs={12} sm={6} md={3}  >
+                    <Grid item xs={12} sm={6} md={3}  >
                         <Card className={classes.cardStyle}>
                             <div >
                                 <img src={calculator} alt='calculator illustration'/>
