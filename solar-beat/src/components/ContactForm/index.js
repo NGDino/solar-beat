@@ -20,9 +20,22 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
+
 const ContactForm = () => {
+
+    const initialValues = {
+        name: '',
+        email: '',
+        address: '',
+        city: '',
+        zip: 0,
+        owner: true,
+        
+    }
+
     const classes = useStyles();
-    const [value, setValue] = useState('female');
+
+    const [value, setValue] = useState(initialValues);
 
     const handleChange = (event) => {
         setValue(event.target.value);
@@ -33,25 +46,25 @@ const ContactForm = () => {
             <h1>How can we Help you</h1>
                 <form >
                     <TextField className={classes.formControl} id="name" name="name" label="Name" variant="filled" >
-                    </TextField>
+                        </TextField>
                     <TextField className={classes.formControl} id="email" name="email" label="Email" variant="filled" >
-                    </TextField>
+                        </TextField>
                     <TextField className={classes.formControl} id="address" name="address" label="Address" variant="filled" >
-                    </TextField>
+                        </TextField>
                     <TextField className={classes.formControl} id="city" name="city" label="City" variant="filled" >
-                    </TextField>
+                        </TextField>
                     <TextField className={classes.formControl} id="zip" name="zip" label="Zip Code" variant="filled" >
-                    </TextField>
+                        </TextField>
                     <TextField className={classes.formControl} id="phone" name="phone" label="Phone" variant="filled" >
-                    </TextField>
+                        </TextField>
                     <TextField className={classes.formControl} id="email" name="email" label="Email" variant="filled" >
-                    </TextField>
+                        </TextField>
                     <FormControl component="fieldset">
-                    <FormLabel component="legend">Do You Own Your Home?</FormLabel>
-                    <RadioGroup aria-label="owner" name="owner1" value={value} onChange={handleChange}>
-                        <FormControlLabel value="owner1" control={<Radio />} label="I own" />
-                        <FormControlLabel value="rent" control={<Radio />} label="I am renting" />
-                    </RadioGroup>
+                        <FormLabel component="legend">Do You Own Your Home?</FormLabel>
+                        <RadioGroup aria-label="owner" name="owner1" value={value} onChange={handleChange}>
+                            <FormControlLabel value= {true} control={<Radio />} label="I own" />
+                            <FormControlLabel value={false} control={<Radio />} label="I am renting" />
+                        </RadioGroup>
                     </FormControl>
                     <br/>
                     <Button variant="contained" color="primary" type='submit' >

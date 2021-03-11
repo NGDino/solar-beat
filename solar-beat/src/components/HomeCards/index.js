@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Grid, Card, div, CardContent, Box } from '@material-ui/core'
+import { Typography, Grid, Card, CardMedia, CardContent, Box } from '@material-ui/core'
 import {makeStyles} from "@material-ui/core/styles";
 import solarPanels from '../../assets/images/solarPanel.png';
 import calculator from '../../assets/images/Calculator.png';
@@ -19,13 +19,17 @@ const HomeCards = () => {
         },
         cardContainer: {
             padding: '1em 10px 25px 10px',
-        },
+        }, media: {
+            height: '50',
+            marginBottom: '0', // 16:9
+          },
         cardStyle : {
             height: '65vh',
             padding: '1em',
             boxShadow: '0 5px 5px 4px',
             border: '5px solid grey',
             borderRadius: 26,
+            
         }
     })
 
@@ -33,10 +37,16 @@ const HomeCards = () => {
     return(
         <Box bgcolor='secondary.light'>
                 <Grid container spacing={3} className={classes.cardContainer} align='center' justify='center' direction='row' >
-                    <Grid item xs={12} sm={6} md={3}  >
+                    <Grid item xs={12} sm={6}  lg={3} >
                         <Card className={classes.cardStyle}>
                             <div >
-                                <img src={calculator} alt='calculator illustration'/>
+                            <CardMedia
+                                className={classes.media}
+                                
+                                title="Calculator Illustration"><img src={calculator} alt='calculator illustration'/>
+                            </CardMedia>
+                            
+                                {/* <img src={calculator} alt='calculator illustration'/> */}
                                 <CardContent>
                                     <Typography gutterBottom varient='h5' component="h2">
                                         Calculate Potential Savings
@@ -50,10 +60,15 @@ const HomeCards = () => {
                         </Card>
                     </Grid>
 
-                    <Grid item xs={12} sm={6} md={3} >
+                    <Grid item xs={12} sm={6} lg={3} >
                         <Card className={classes.cardStyle}>
                             <div>
-                                <img src={solarPanels} alt='green battery illustration'/>
+                            <CardMedia
+                                className={classes.media}
+                                
+                                title="Calculator Illustration"><img src={solarPanels} alt='green battery illustration'/>
+                            </CardMedia>
+                                
                                 <CardContent>
                                     <Typography gutterBottom varient='h4' component="h4">
                                         Compare and Save
@@ -67,10 +82,15 @@ const HomeCards = () => {
                         </Card>
                     </Grid>
 
-                    <Grid item xs={12} sm={6} md={3}>
+                    <Grid item xs={12} sm={6} lg={3} >
                         <Card className={classes.cardStyle}>
                             <div>
-                                <img src={ecohouse} alt='Green Energy House'/>
+                            <CardMedia
+                                className={classes.media}
+                                
+                                title="Calculator Illustration"><img src={ecohouse} alt='Green Energy House'/>
+                            </CardMedia>
+                                
                                 <CardContent>
                                     <Typography gutterBottom varient='h4' component="h4">
                                         Own Your Power
