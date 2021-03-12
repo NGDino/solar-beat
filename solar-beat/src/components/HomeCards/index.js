@@ -18,7 +18,7 @@ const HomeCards = () => {
             marginTop: '20px'
         },
         cardContainer: {
-            padding: '1em 10px 25px 10px',
+            padding: '1em .5em 25px .5em',
         }, media: {
             height: '50',
             marginBottom: '0', // 16:9

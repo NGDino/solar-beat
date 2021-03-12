@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {Box, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -6,10 +6,10 @@ import ContactForm from '../../components/ContactForm'
 
 const useStyles = makeStyles({
     boxStyle: {
-        height: '85vh'
+        display: 'flex'
     },
     container: {
-        margin: '3em'
+        margin: ''
     }
 })
 
@@ -24,7 +24,7 @@ const Contact = () =>{
                 direction="column"
                 alignItems="center"
                 justify="flex-start"
-                style={{ minHeight: '100vh' }}
+                style={{ minHeight: '55vh' }}
                 >
                     <Grid item xs={10} className={classes.container}>
                         <ContactForm />
