@@ -41,19 +41,21 @@ const ContactForm = () => {
     
     const validate = () => {
         let temp = {};
-        temp.name = values.name?'':"This Field is required"
+        temp.name = values.name?'':"This field is required"
         temp.email = (/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/).test(values.email)?'' :"Not a valid email"
         temp.address = values.address?'':"This Field is required"
         temp.city = values.city?'':"This Field is required"
         temp.state = values.state?'':"This Field is required"
-        temp.zip = values.zip?'':"This Field is required"
+        temp.zip =  (/^\d{5}$/).test(values.zip)?'':"Enter a 5 digit zip code"
         temp.phone = (/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/).test(values.phone)?'':"Not a valid phone number"
         temp.owner = values.owner === true ? '':"You must be a homeowner to go solar"
         setErrors({
             ...temp
         })
         console.log('temp',temp)
+        
         return Object.values(temp).every(x => x == '' )
+        
     }
     const classes = useStyles();
 
@@ -74,7 +76,8 @@ const ContactForm = () => {
         console.log('submit', values, errors)
         if(validate()){
             alert('works biotch')
-        }else{ alert('enter yo shit')}
+            console.log('errors submit', errors)
+        }else{ alert('Fix form errors')}
     }
 
     return (
@@ -88,8 +91,8 @@ const ContactForm = () => {
                         name="name" 
                         label="Name" 
                         variant="filled" 
-                        error
-                        helperText="Name cannot be blank"
+                        helperText={errors.name}
+                        error = {errors.name}
                     />
                     <TextField 
                         onChange = {handleChange}
@@ -98,8 +101,8 @@ const ContactForm = () => {
                         name="email" 
                         label="Email" 
                         variant="filled"
-                        error
-                        helperText="Not a valid email address" 
+                        helperText={errors.email}
+                        error = {errors.email}
                         />
                     <TextField 
                         className={classes.formControl} 
@@ -108,8 +111,8 @@ const ContactForm = () => {
                         name="address" 
                         label="Address" 
                         variant="filled" 
-                        error
-                        helperText="Please enter address"
+                        helperText={errors.address}
+                        error = {errors.address}
                         />
                     <TextField 
                         className={classes.formControl} 
@@ -118,8 +121,8 @@ const ContactForm = () => {
                         name="city" 
                         label="City" 
                         variant="filled"
-                        error
-                        helperText="City cannot be blank" 
+                        helperText={errors.city}
+                        error = {errors.city} 
                         />
                         <TextField 
                         className={classes.formControl} 
@@ -128,8 +131,8 @@ const ContactForm = () => {
                         name="state" 
                         label="State" 
                         variant="filled" 
-                        error
-                        helperText="State cannot be blank"
+                        helperText={errors.state}
+                        error = {errors.state}
                         />
                     <TextField 
                         className={classes.formControl} 
@@ -138,18 +141,18 @@ const ContactForm = () => {
                         name="zip" 
                         label="Zip Code" 
                         variant="filled"
-                        error
-                        helperText="Zip Code cannot be blank" 
+                        helperText={errors.zip}
+                        error = {errors.zip}
                         />
                     <TextField 
-                        className={classes.formControl} 
+                        classzip={classes.formControl} 
                         onChange = {handleChange}
                         id="phone" 
                         name="phone" 
                         label="Phone" 
                         variant="filled" 
-                        error
-                        helperText="Not a valid phone number"
+                        helperText={errors.phone}
+                        error = {errors.phone}
                         />
                     
 
