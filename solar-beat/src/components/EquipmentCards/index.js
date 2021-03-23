@@ -21,14 +21,17 @@ const useStyles= makeStyles({
         boxShadow: '0 5px 5px 4px',
         border: '5px solid grey',
         borderRadius: 26,
+    },
+    wrapper: {
+        paddingBottom: '2rem'
     }
 })
 
 const EquipmentCards = () => {
     const classes = useStyles();
     return(
-        <Container className=''>
-                <Grid container spacing={4} >
+        <Container className={classes.wrapper}>
+                <Grid container spacing={4} justify="center" >
                     <Grid item xs={12} md={5}  >
                     <Box >
                     <Card className={classes.card} borderRadius={26} >
