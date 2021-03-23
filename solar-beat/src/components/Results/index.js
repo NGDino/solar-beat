@@ -15,7 +15,6 @@ const Snapshot= () => {
     const data = JSON.parse(localStorage.getItem('customer-data'));
     console.log(data)
 
-    const [monthly, setMonthly] = useState(0)
 
     const billPrice = data.billAmount
     console.log('bill price', billPrice)
@@ -59,7 +58,7 @@ const Snapshot= () => {
 
     const r = interest/12
 
-    const t = 240
+    const t = 300
     let usablePay = '0'
 
     function getPayment(p,r,t){
