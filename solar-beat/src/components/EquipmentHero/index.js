@@ -5,8 +5,8 @@ import Hero from '../../assets/images/solarhouse.jpg';
 
 import {makeStyles} from '@material-ui/core/styles';
 
-const useStyles= makeStyles
-({
+const useStyles= makeStyles((theme) => ({
+
     hero : {
         backgroundImage: `url(${Hero})`,
         backgroundPosition: 'center',
@@ -14,6 +14,9 @@ const useStyles= makeStyles
         height: '85vh',
         padding: '20 px',
         marginBottom: '20px',
+        [theme.breakpoints.down('sm')]: {
+            height: '50vh'
+        },
     },
 
     bannerText: {
@@ -22,7 +25,7 @@ const useStyles= makeStyles
         padding: '1em 1em 1em 1em',
         boxShadow: '0 5px 5px 4px'
     }
-}); 
+})); 
 
 
 const EquipmentHero = () => {

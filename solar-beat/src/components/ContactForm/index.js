@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Paper, TextField, FormControl, RadioGroup, FormControlLabel, Button, Radio, FormLabel} from '@material-ui/core'
 import {makeStyles} from '@material-ui/core/styles'
+import { Autorenew } from '@material-ui/icons';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -13,6 +14,8 @@ const useStyles = makeStyles((theme) => ({
     },
     formContainer: {
         height: 'fit',
+        width: 'auto',
+        margins: 'auto',
         padding: '2em',
         boxShadow: '0 5px 5px 4px',
         border: '5px solid grey',
@@ -166,8 +169,12 @@ const ContactForm = () => {
                         </RadioGroup>
                     </FormControl>
                     <br/>
-                    <Button variant="contained" color="primary" type='submit' >
-                        Request a Quote
+                    <Button 
+                        variant="contained" 
+                        color="secondary" 
+                        type='submit'
+                        disabled >
+                            Request a Quote
                     </Button>
 
                 </form>

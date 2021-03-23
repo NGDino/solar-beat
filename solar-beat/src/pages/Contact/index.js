@@ -6,10 +6,10 @@ import ContactForm from '../../components/ContactForm'
 
 const useStyles = makeStyles({
     boxStyle: {
-        display: 'flex'
+        
     },
     container: {
-        margin: ''
+        
     }
 })
 

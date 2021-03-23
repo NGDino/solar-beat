@@ -4,7 +4,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import heroImage from '../../assets/images/solarhouse.jpg';
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root:{
         boxSizing: 'border-box',
         
@@ -16,6 +16,9 @@ const useStyles = makeStyles({
         height: '85vh',
         padding: '20 px',
         // marginBottom: '20px'
+        [theme.breakpoints.down('sm')]: {
+            height: '50vh'
+        },
         
     },
     
@@ -28,7 +31,7 @@ const useStyles = makeStyles({
 
     },
     
-})
+}));
 
 const Hero = () => {
     const classes = useStyles()

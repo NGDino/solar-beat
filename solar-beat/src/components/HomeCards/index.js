@@ -22,7 +22,7 @@ const HomeCards = () => {
         }, media: {
             height: '50',
             marginBottom: '0', // 16:9
-          },
+        },
         cardStyle : {
             height: '65vh',
             padding: '1em',
