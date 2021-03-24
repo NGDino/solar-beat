@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
         width: 'auto',
     },
     logo: {
-        height: "90px",
+        height: "3rem",
         
     }
 
