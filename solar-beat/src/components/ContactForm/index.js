@@ -1,11 +1,15 @@
 import React, {useState} from 'react';
-import {Paper, TextField, FormControl, RadioGroup, FormControlLabel, Button, Radio, FormLabel} from '@material-ui/core'
+import {Paper, TextField, FormControl, RadioGroup, FormControlLabel, Button, Radio, FormLabel, Grid, Typography} from '@material-ui/core'
 import {makeStyles} from '@material-ui/core/styles'
 
 
 const useStyles = makeStyles((theme) => ({
+    root: {
+        flexGrow: 1,
+    },
     formControl: {
-        margin: theme.spacing(1),
+        margin: theme.spacing(2),
+        textAlign: 'center'
         
     },
     selectEmpty: {
@@ -19,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: '0 5px 5px 4px',
         border: '5px solid grey',
         borderRadius: 26,
-        width: 'fit'
     }
 }));
 
@@ -84,102 +87,119 @@ const ContactForm = () => {
     }
 
     return (
-        <Paper elevation ={3} varients="outlined" className={classes.formContainer} >
-            <h1>How can we Help you</h1>
-                <form onSubmit={handleSubmit}>
-                    <TextField 
-                        className={classes.formControl} 
-                        onChange = {handleChange}
-                        id="name" 
-                        name="name" 
-                        label="Name" 
-                        variant="filled" 
-                        helperText={errors.name}
-                        error = {errors.name.length >1}
-                    />
-                    <TextField 
-                        onChange = {handleChange}
-                        className={classes.formControl} 
-                        id="email" 
-                        name="email" 
-                        label="Email" 
-                        variant="filled"
-                        helperText={errors.email}
-                        error = {errors.email.length >1}
-                        />
-                    <TextField 
-                        className={classes.formControl} 
-                        onChange = {handleChange}
-                        id="address" 
-                        name="address" 
-                        label="Address" 
-                        variant="filled" 
-                        helperText={errors.address}
-                        error = {errors.address.length > 1}
-                        />
-                    <TextField 
-                        className={classes.formControl} 
-                        onChange = {handleChange}
-                        id="city" 
-                        name="city" 
-                        label="City" 
-                        variant="filled"
-                        helperText={errors.city}
-                        error = {errors.city.length > 1} 
-                        />
-                        <TextField 
-                        className={classes.formControl} 
-                        onChange = {handleChange}
-                        id="state" 
-                        name="state" 
-                        label="State" 
-                        variant="filled" 
-                        helperText={errors.state}
-                        error = {errors.state.length > 1}
-                        />
-                    <TextField 
-                        className={classes.formControl} 
-                        onChange = {handleChange}
-                        id="zip" 
-                        name="zip" 
-                        label="Zip Code" 
-                        variant="filled"
-                        helperText={errors.zip}
-                        error = {errors.zip.length > 1}
-                        />
-                    <TextField 
-                        classzip={classes.formControl} 
-                        onChange = {handleChange}
-                        id="phone" 
-                        name="phone" 
-                        label="Phone" 
-                        variant="filled" 
-                        helperText={errors.phone}
-                        error = {errors.phone.length > 1}
-                        />
+        <div className={classes.root}>
+            <Paper elevation ={3} varients="outlined" className={classes.formContainer}>
+                <Grid container  spacing={3} justify='center'>
+                    <Grid item>
+                        <Typography variant='h3' gutterBottom= {true}  >How can we Help you</Typography>
+                    </Grid>
+                    <Grid container>
+                        <form onSubmit={handleSubmit}>
+                            <Grid item xs={12} sm={5}>
+                                <TextField 
+                                    className={classes.formControl} 
+                                    onChange = {handleChange}
+                                    id="name" 
+                                    name="name" 
+                                    label="Name" 
+                                    variant="filled" 
+                                    helperText={errors.name}
+                                    error = {errors.name.length >1}
+                                />
+                            </Grid>
+                            <Grid item xs={12} sm={5}>
+                                <TextField 
+                                    onChange = {handleChange}
+                                    className={classes.formControl} 
+                                    id="email" 
+                                    name="email" 
+                                    label="Email" 
+                                    variant="filled"
+                                    helperText={errors.email}
+                                    error = {errors.email.length >1}
+                                />
+                            </Grid>
+
+
+                            <TextField 
+                                className={classes.formControl} 
+                                onChange = {handleChange}
+                                id="address" 
+                                name="address" 
+                                label="Address" 
+                                variant="filled" 
+                                helperText={errors.address}
+                                error = {errors.address.length > 1}
+                                />
+                            <TextField 
+                                className={classes.formControl} 
+                                onChange = {handleChange}
+                                id="city" 
+                                name="city" 
+                                label="City" 
+                                variant="filled"
+                                helperText={errors.city}
+                                error = {errors.city.length > 1} 
+                                />
+                                <TextField 
+                                className={classes.formControl} 
+                                onChange = {handleChange}
+                                id="state" 
+                                name="state" 
+                                label="State" 
+                                variant="filled" 
+                                helperText={errors.state}
+                                error = {errors.state.length > 1}
+                                />
+                            <TextField 
+                                className={classes.formControl} 
+                                onChange = {handleChange}
+                                id="zip" 
+                                name="zip" 
+                                label="Zip Code" 
+                                variant="filled"
+                                helperText={errors.zip}
+                                error = {errors.zip.length > 1}
+                                />
+                            <TextField 
+                                classzip={classes.formControl} 
+                                onChange = {handleChange}
+                                id="phone" 
+                                name="phone" 
+                                label="Phone" 
+                                variant="filled" 
+                                helperText={errors.phone}
+                                error = {errors.phone.length > 1}
+                                />
+                            
+
+
+                            <FormControl component="fieldset">
+                                <FormLabel component="legend">Do You Own Your Home?</FormLabel>
+                                <br/>
+                                <RadioGroup aria-label="owner" name="owner" value={values.owner} onChange={handleChange}>
+                                    <FormControlLabel value= 'owner' control={<Radio />} label="I own" />
+                                    <FormControlLabel value='renter' control={<Radio />} label="I am renting" />
+                                </RadioGroup>
+                            </FormControl>
+                            <br/>
+                            <Button 
+                                variant="contained" 
+                                color="secondary" 
+                                type='submit'
+                                
+                                >
+                                    Request a Quote
+                            </Button>
+
+                        </form>
+                    </Grid>
                     
-
-
-                    <FormControl component="fieldset">
-                        <FormLabel component="legend">Do You Own Your Home?</FormLabel>
-                        <br/>
-                        <RadioGroup aria-label="owner" name="owner" value={values.owner} onChange={handleChange}>
-                            <FormControlLabel value= 'owner' control={<Radio />} label="I own" />
-                            <FormControlLabel value='renter' control={<Radio />} label="I am renting" />
-                        </RadioGroup>
-                    </FormControl>
-                    <br/>
-                    <Button 
-                        variant="contained" 
-                        color="secondary" 
-                        type='submit'
-                        
-                        >
-                            Request a Quote
-                    </Button>
-
-                </form>
+                </Grid>
+                
             </Paper>
+        </div>
+        
     )
 }
 

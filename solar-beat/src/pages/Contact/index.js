@@ -26,7 +26,7 @@ const Contact = () =>{
                 justify="center"
                 style={{ minHeight: '55vh' }}
                 >
-                    <Grid item xs={10} className={classes.container}>
+                    <Grid item xs={11} sm={10} className={classes.container}>
                         <ContactForm />
                     </Grid> 
                 </Grid>
