@@ -13,8 +13,8 @@ const useStyles = makeStyles((theme) => ({
     },
     formContainer: {
         height: 'fit',
-        width: 'auto',
-        margins: 'auto',
+        marginTop: '2rem',
+        marginBottom: '2rem',
         padding: '2em',
         boxShadow: '0 5px 5px 4px',
         border: '5px solid grey',
@@ -32,14 +32,14 @@ const ContactForm = () => {
         address: '',
         city: '',
         state: '',
-        zip: 0,
+        zip: '',
         phone: '',
-        owner: true,
+        owner: '',
         
     }
 
     const [values, setValue] = useState(initialValues);
-    const [errors, setErrors] = useState({})
+    const [errors, setErrors] = useState(initialValues)
 
     
     const validate = () => {
@@ -51,7 +51,7 @@ const ContactForm = () => {
         temp.state = values.state?'':"This Field is required"
         temp.zip =  (/^\d{5}$/).test(values.zip)?'':"Enter a 5 digit zip code"
         temp.phone = (/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/).test(values.phone)?'':"Not a valid phone number"
-        temp.owner = values.owner === true ? '':"You must be a homeowner to go solar"
+        temp.owner = values.owner === 'owner' ? '':"You must be a homeowner to go solar"
         setErrors({
             ...temp
         })
@@ -70,6 +70,7 @@ const ContactForm = () => {
             ...values,
             [name]: value
         });
+        console.log(values)
         
     }
 
@@ -79,7 +80,7 @@ const ContactForm = () => {
         if(validate()){
             alert('works biotch')
             console.log('errors submit', errors)
-        }else{ alert('Fix form errors')}
+        }else{ console.log(errors)}
     }
 
     return (
@@ -94,7 +95,7 @@ const ContactForm = () => {
                         label="Name" 
                         variant="filled" 
                         helperText={errors.name}
-                        error = {errors.name}
+                        error = {errors.name.length >1}
                     />
                     <TextField 
                         onChange = {handleChange}
@@ -104,7 +105,7 @@ const ContactForm = () => {
                         label="Email" 
                         variant="filled"
                         helperText={errors.email}
-                        error = {errors.email}
+                        error = {errors.email.length >1}
                         />
                     <TextField 
                         className={classes.formControl} 
@@ -114,7 +115,7 @@ const ContactForm = () => {
                         label="Address" 
                         variant="filled" 
                         helperText={errors.address}
-                        error = {errors.address}
+                        error = {errors.address.length > 1}
                         />
                     <TextField 
                         className={classes.formControl} 
@@ -124,7 +125,7 @@ const ContactForm = () => {
                         label="City" 
                         variant="filled"
                         helperText={errors.city}
-                        error = {errors.city} 
+                        error = {errors.city.length > 1} 
                         />
                         <TextField 
                         className={classes.formControl} 
@@ -134,7 +135,7 @@ const ContactForm = () => {
                         label="State" 
                         variant="filled" 
                         helperText={errors.state}
-                        error = {errors.state}
+                        error = {errors.state.length > 1}
                         />
                     <TextField 
                         className={classes.formControl} 
@@ -144,7 +145,7 @@ const ContactForm = () => {
                         label="Zip Code" 
                         variant="filled"
                         helperText={errors.zip}
-                        error = {errors.zip}
+                        error = {errors.zip.length > 1}
                         />
                     <TextField 
                         classzip={classes.formControl} 
@@ -154,7 +155,7 @@ const ContactForm = () => {
                         label="Phone" 
                         variant="filled" 
                         helperText={errors.phone}
-                        error = {errors.phone}
+                        error = {errors.phone.length > 1}
                         />
                     
 
@@ -162,9 +163,9 @@ const ContactForm = () => {
                     <FormControl component="fieldset">
                         <FormLabel component="legend">Do You Own Your Home?</FormLabel>
                         <br/>
-                        <RadioGroup aria-label="owner" name="owner1" value={values.owner} onChange={handleChange}>
-                            <FormControlLabel value= {true} control={<Radio />} label="I own" />
-                            <FormControlLabel value={false} control={<Radio />} label="I am renting" />
+                        <RadioGroup aria-label="owner" name="owner" value={values.owner} onChange={handleChange}>
+                            <FormControlLabel value= 'owner' control={<Radio />} label="I own" />
+                            <FormControlLabel value='renter' control={<Radio />} label="I am renting" />
                         </RadioGroup>
                     </FormControl>
                     <br/>
@@ -172,7 +173,8 @@ const ContactForm = () => {
                         variant="contained" 
                         color="secondary" 
                         type='submit'
-                        disabled >
+                        
+                        >
                             Request a Quote
                     </Button>
 

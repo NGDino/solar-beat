@@ -10,6 +10,7 @@ const useStyles = makeStyles({
     },
     container: {
         
+        
     }
 })
 
@@ -22,7 +23,7 @@ const Contact = () =>{
                 container
                 spacing={0}
                 alignItems="center"
-                justify="flex-start"
+                justify="center"
                 style={{ minHeight: '55vh' }}
                 >
                     <Grid item xs={10} className={classes.container}>
