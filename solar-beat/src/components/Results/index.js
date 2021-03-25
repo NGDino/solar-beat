@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
     const rates = {
         1 : 0.23, //0-100
@@ -59,7 +59,7 @@ const Snapshot= () => {
     const r = interest/12
 
     const t = 300
-    let usablePay = '0'
+    // let usablePay = '0'
 
     function getPayment(p,r,t){
         

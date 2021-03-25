@@ -27,10 +27,10 @@ const useStyles = makeStyles((theme) => ({
         width: 250,
     },
     fullList: {
-        width: 'auto',
+        width: '100%',
     },
     logo: {
-        height: "3rem",
+        height: "80px",
         
     }
 

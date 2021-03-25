@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
 import {Paper, TextField, FormControl, RadioGroup, FormControlLabel, Button, Radio, FormLabel} from '@material-ui/core'
 import {makeStyles} from '@material-ui/core/styles'
-import { Autorenew } from '@material-ui/icons';
 
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
         margin: theme.spacing(1),
-        minWidth: 400,
+        
     },
     selectEmpty: {
         marginTop: theme.spacing(2),
@@ -20,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: '0 5px 5px 4px',
         border: '5px solid grey',
         borderRadius: 26,
+        width: 'fit'
     }
 }));
 
@@ -57,7 +57,7 @@ const ContactForm = () => {
         })
         console.log('temp',temp)
         
-        return Object.values(temp).every(x => x == '' )
+        return Object.values(temp).every(x => x === '' )
         
     }
     const classes = useStyles();
@@ -70,7 +70,6 @@ const ContactForm = () => {
             ...values,
             [name]: value
         });
-        console.log(values)
         
     }
 

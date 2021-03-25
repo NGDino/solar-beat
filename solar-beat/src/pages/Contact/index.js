@@ -21,7 +21,6 @@ const Contact = () =>{
             <Grid
                 container
                 spacing={0}
-                direction="column"
                 alignItems="center"
                 justify="flex-start"
                 style={{ minHeight: '55vh' }}
