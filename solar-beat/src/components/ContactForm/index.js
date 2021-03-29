@@ -7,22 +7,25 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
     },
-    formControl: {
+    formEl: {
         margin: theme.spacing(2),
-        textAlign: 'center'
+        
         
     },
     selectEmpty: {
         marginTop: theme.spacing(2),
     },
     formContainer: {
-        height: 'fit',
         marginTop: '2rem',
         marginBottom: '2rem',
         padding: '2em',
         boxShadow: '0 5px 5px 4px',
         border: '5px solid grey',
         borderRadius: 26,
+    },
+    form: {
+        // width: '400',
+        textAlign: 'center',
     }
 }));
 
@@ -89,15 +92,17 @@ const ContactForm = () => {
     return (
         <div className={classes.root}>
             <Paper elevation ={3} varients="outlined" className={classes.formContainer}>
-                <Grid container  spacing={3} justify='center'>
+                <Grid container  spacing={1} justify='center'>
                     <Grid item>
                         <Typography variant='h3' gutterBottom= {true}  >How can we Help you</Typography>
                     </Grid>
-                    <Grid container>
-                        <form onSubmit={handleSubmit}>
-                            <Grid item xs={12} sm={5}>
+                    <form onSubmit={handleSubmit} classes={classes.form}>
+
+                    <Grid container spacing = {2} justify='center'>
+                            <Grid item xs={12} sm={6}>
                                 <TextField 
-                                    className={classes.formControl} 
+                                    className={classes.formEl} 
+                                    fullWidth
                                     onChange = {handleChange}
                                     id="name" 
                                     name="name" 
@@ -107,10 +112,11 @@ const ContactForm = () => {
                                     error = {errors.name.length >1}
                                 />
                             </Grid>
-                            <Grid item xs={12} sm={5}>
+                            <Grid item xs={12} sm={6}>
                                 <TextField 
                                     onChange = {handleChange}
-                                    className={classes.formControl} 
+                                    className={classes.formEl} 
+                                    fullWidth
                                     id="email" 
                                     name="email" 
                                     label="Email" 
@@ -120,59 +126,73 @@ const ContactForm = () => {
                                 />
                             </Grid>
 
-
-                            <TextField 
-                                className={classes.formControl} 
-                                onChange = {handleChange}
-                                id="address" 
-                                name="address" 
-                                label="Address" 
-                                variant="filled" 
-                                helperText={errors.address}
-                                error = {errors.address.length > 1}
-                                />
-                            <TextField 
-                                className={classes.formControl} 
-                                onChange = {handleChange}
-                                id="city" 
-                                name="city" 
-                                label="City" 
-                                variant="filled"
-                                helperText={errors.city}
-                                error = {errors.city.length > 1} 
-                                />
+                            <Grid item xs={12} sm={6}>
                                 <TextField 
-                                className={classes.formControl} 
-                                onChange = {handleChange}
-                                id="state" 
-                                name="state" 
-                                label="State" 
-                                variant="filled" 
-                                helperText={errors.state}
-                                error = {errors.state.length > 1}
+                                    className={classes.formEl} 
+                                    onChange = {handleChange}
+                                    fullWidth
+                                    id="address" 
+                                    name="address" 
+                                    label="Address" 
+                                    variant="filled" 
+                                    helperText={errors.address}
+                                    error = {errors.address.length > 1}
+                                    />
+                                </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <TextField 
+                                    className={classes.formEl} 
+                                    onChange = {handleChange}
+                                    fullWidth
+                                    id="city" 
+                                    name="city" 
+                                    label="City" 
+                                    variant="filled"
+                                    helperText={errors.city}
+                                    error = {errors.city.length > 1} 
                                 />
-                            <TextField 
-                                className={classes.formControl} 
-                                onChange = {handleChange}
-                                id="zip" 
-                                name="zip" 
-                                label="Zip Code" 
-                                variant="filled"
-                                helperText={errors.zip}
-                                error = {errors.zip.length > 1}
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <TextField 
+                                    className={classes.formEl} 
+                                    onChange = {handleChange}
+                                    fullWidth
+                                    id="state" 
+                                    name="state" 
+                                    label="State" 
+                                    variant="filled" 
+                                    helperText={errors.state}
+                                    error = {errors.state.length > 1}
                                 />
-                            <TextField 
-                                classzip={classes.formControl} 
-                                onChange = {handleChange}
-                                id="phone" 
-                                name="phone" 
-                                label="Phone" 
-                                variant="filled" 
-                                helperText={errors.phone}
-                                error = {errors.phone.length > 1}
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <TextField 
+                                    className={classes.formEl} 
+                                    onChange = {handleChange}
+                                    fullWidth
+                                    id="zip" 
+                                    name="zip" 
+                                    label="Zip Code" 
+                                    variant="filled"
+                                    helperText={errors.zip}
+                                    error = {errors.zip.length > 1}
                                 />
-                            
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <TextField 
+                                    classzip={classes.formEl} 
+                                    onChange = {handleChange}
+                                    fullWidth
+                                    id="phone" 
+                                    name="phone" 
+                                    label="Phone" 
+                                    variant="filled" 
+                                    helperText={errors.phone}
+                                    error = {errors.phone.length > 1}
+                                    />
+                            </Grid>
 
+                            <Grid item xs={12}>
 
                             <FormControl component="fieldset">
                                 <FormLabel component="legend">Do You Own Your Home?</FormLabel>
@@ -182,7 +202,10 @@ const ContactForm = () => {
                                     <FormControlLabel value='renter' control={<Radio />} label="I am renting" />
                                 </RadioGroup>
                             </FormControl>
+                            </Grid>
                             <br/>
+                            <Grid item xs={12}>
+                            
                             <Button 
                                 variant="contained" 
                                 color="secondary" 
@@ -191,9 +214,10 @@ const ContactForm = () => {
                                 >
                                     Request a Quote
                             </Button>
+                            </Grid>
 
-                        </form>
                     </Grid>
+                    </form>
                     
                 </Grid>
                 
