@@ -1,4 +1,4 @@
-import { Typography,  TextField, FormControl, Select, MenuItem, InputLabel, Slider, Button, Box, Paper } from '@material-ui/core'
+import { Typography,  TextField, FormControl, Select, MenuItem, InputLabel, Slider, Button, Box, Paper, Grid} from '@material-ui/core'
 import React, {useEffect, useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import {
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     },
     formControl: {
         margin: theme.spacing(2),
-        minWidth: 250,
+        
     },
     selectEmpty: {
         marginTop: theme.spacing(2),
@@ -119,86 +119,100 @@ const EstimateForm = () => {
                 <Typography variant={'h3'}>How Much Can I Save With Solar?</Typography>
                 <Typography varieant = {'p'}>There are many factors that go into how much each indivudual saves with solar and unfortunately solar doesn't work for every home.  The only way to know exactly what solar will look like is with a personalized quote.  This tool gives a simple snapshot of potential savings and tax incentives based on your location and bil amount!</Typography>
                 <form onSubmit={handleSolarCalc}>
-                    <TextField className={classes.formControl} id="name" name="name" label="Name" variant="filled" onChange={handleChange}>
-                    </TextField>
-                    <TextField className={classes.formControl} id="email" name="email" label="Email" variant="filled" onChange={handleChange}>
-                    </TextField>
-                    
-                    <FormControl className={classes.formControl} variant="filled">
-                        <InputLabel id="state-label">State of Residence</InputLabel>
-                        <Select
-                            labelId="state-label"
-                            id='state'
-                            name="residence"
-                            value= {formState.residence}
-                            onChange={handleChange}
-                        >
-                            <MenuItem value={""}>
-                                <em>None</em>
-                            </MenuItem>
-                            <MenuItem value={'ca'}>CA</MenuItem>
-                            <MenuItem value={'nv'}>NV</MenuItem>
-                            {/* <MenuItem value={30}>Thirty</MenuItem> */}
-                        </Select>
-                    </FormControl>
-                    <FormControl className={classes.formControl} variant="filled">
-                    <InputLabel id="utility-company-label">Utility Company</InputLabel>
+                    <Grid container justify='center' spacing ={2}>
+                        <Grid item xs={12} sm={6}>
+                            <TextField className={classes.formControl} fullWidth id="name" name="name" label="Name" variant="filled" onChange={handleChange}>
+                            </TextField>                        
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <TextField  className={classes.formControl} fullWidth id="email" name="email" label="Email" variant="filled" onChange={handleChange}>
+                            </TextField>
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <FormControl className={classes.formControl} fullWidth variant="filled">
+                                <InputLabel id="state-label">State of Residence</InputLabel>
+                                <Select
+                                    labelId="state-label"
+                                    id='state'
+                                    name="residence"
+                                    value= {formState.residence}
+                                    onChange={handleChange}
+                                >
+                                    <MenuItem value={""}>
+                                        <em>None</em>
+                                    </MenuItem>
+                                    <MenuItem value={'ca'}>CA</MenuItem>
+                                    <MenuItem value={'nv'}>NV</MenuItem>
+                                    {/* <MenuItem value={30}>Thirty</MenuItem> */}
+                                </Select>
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <FormControl className={classes.formControl} fullWidth variant="filled">
+                            <InputLabel id="utility-company-label">Utility Company</InputLabel>
 
-                        <Select
-                            labelId="utility-company-label"
-                            name="utilityCompany"
-                            value= {formState.utilityCompany}
-                            onChange={handleChange}
-                        >
-                            <MenuItem value="">
-                                <em>None</em>
-                            </MenuItem>
-                            <MenuItem value={'pge'}>PG&E</MenuItem>
-                            <MenuItem value={'sdge'}>SDG&E</MenuItem>
-                            <MenuItem value={'edison'}>SCE</MenuItem>
-                            <MenuItem value={'nevada'}>NV Energy</MenuItem>
-                        </Select>
-                    </FormControl>
-                    <Typography id="discrete-slider" gutterBottom>
-                        Average Bill
-                    </Typography>
-                    <Slider
-                        defaultValue={125}
-                        // getAriaValueText={valuetext}
-                        aria-labelledby="discrete-slider"
-                        valueLabelDisplay="auto"
-                        step={1}
-                        marks={marks}
-                        min={0}
-                        max={400}
-                        name="billAmount"
-                        onChange={sliderValue}
-                        // onChange={}
-                        // onChangeCommitted={handleChange}
-                    />
-                    <FormControl className={classes.formControl} variant="filled">
-                    <InputLabel id="roofType-label">Roof Type</InputLabel>
-                        <Select
-                            labelId="roofType-label"
-                            name="roofType"
-                            value={formState.roofType}
-                            onChange={handleChange}
-                        >
-                            <MenuItem value="">
-                                <em>None</em>
-                            </MenuItem>
-                            <MenuItem value={'composite'}>Composite</MenuItem>
-                            <MenuItem value={'cementTile'}>Cement Tyle</MenuItem>
-                            <MenuItem value={'metal'}>Metal</MenuItem>
-                            <MenuItem value={'flat'}>Flat</MenuItem>
-                            <MenuItem value={'terracotta'}>Terracotta</MenuItem>
-                        </Select>
-                    </FormControl>
-                    <br/>
-                    <Button variant="contained" color="primary" type='submit' component = {RouterLink} to = '/results' children={formState}>
-                        Solar Pulse Check
-                    </Button>
+                                <Select
+                                    labelId="utility-company-label"
+                                    name="utilityCompany"
+                                    value= {formState.utilityCompany}
+                                    onChange={handleChange}
+                                >
+                                    <MenuItem value="">
+                                        <em>None</em>
+                                    </MenuItem>
+                                    <MenuItem value={'pge'}>PG&E</MenuItem>
+                                    <MenuItem value={'sdge'}>SDG&E</MenuItem>
+                                    <MenuItem value={'edison'}>SCE</MenuItem>
+                                    <MenuItem value={'nevada'}>NV Energy</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={7} >
+                            <Typography id="discrete-slider" gutterBottom>
+                                Average Bill
+                            </Typography>
+                            <Slider
+                                defaultValue={125}
+                                // getAriaValueText={valuetext}
+                                aria-labelledby="discrete-slider"
+                                valueLabelDisplay="auto"
+                                step={1}
+                                marks={marks}
+                                min={0}
+                                max={400}
+                                name="billAmount"
+                                onChange={sliderValue}
+                                // onChange={}
+                                // onChangeCommitted={handleChange}
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <FormControl className={classes.formControl} variant="filled" fullWidth>
+                            <InputLabel id="roofType-label">Roof Type</InputLabel>
+                                <Select
+                                    labelId="roofType-label"
+                                    name="roofType"
+                                    value={formState.roofType}
+                                    onChange={handleChange}
+                                >
+                                    <MenuItem value="">
+                                        <em>None</em>
+                                    </MenuItem>
+                                    <MenuItem value={'composite'}>Composite</MenuItem>
+                                    <MenuItem value={'cementTile'}>Cement Tyle</MenuItem>
+                                    <MenuItem value={'metal'}>Metal</MenuItem>
+                                    <MenuItem value={'flat'}>Flat</MenuItem>
+                                    <MenuItem value={'terracotta'}>Terracotta</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12}>
+                        <Button variant="contained" color="secondary" type='submit' component = {RouterLink} to = '/results' children={formState}>
+                            Solar Pulse Check
+                        </Button>
+                        </Grid>
 
+                    </Grid>
                 </form>
             </Paper>
         </Box>
