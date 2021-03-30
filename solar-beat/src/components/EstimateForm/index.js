@@ -1,4 +1,4 @@
-import { Typography,  TextField, FormControl, Select, MenuItem, InputLabel, Slider, Button, Box, Paper, Grid} from '@material-ui/core'
+import { Typography,  TextField, FormControl, Select, MenuItem, InputLabel, Slider, Button, Box, Paper, Grid, FormHelperText, } from '@material-ui/core'
 import React, {useEffect, useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import {
@@ -33,9 +33,7 @@ const useStyles = makeStyles((theme) => ({
 // }
 
 const EstimateForm = () => {
-    useEffect(() => {
-        localStorage.setItem('customer-data', JSON.stringify(formState))
-    })
+
 //labels for slider
 // console.log('does this owrk')
     const marks = [
@@ -74,10 +72,37 @@ const EstimateForm = () => {
     ];
 
     const classes = useStyles();
-
+    const initialValues = {
+        name: '',
+        // email: '',
+        residence: '',
+        utilityCompany: '',
+        // billAmount: '',
+        roofType: '',
+    }
 
     const [formState, setFormState] = useState({name: '', email:'', residence:'', utilityCompany: '', billAmount: 0, roofType:'' })
 
+    const [errors, setErrors] = useState(initialValues)
+
+    useEffect(() => {
+        localStorage.setItem('customer-data', JSON.stringify(formState))
+    })
+
+    const validate = () => {
+        let temp = {};
+        temp.name = formState.name?'':"This field is required"
+        temp.residence = formState.residence?'':"This Field is required"
+        temp.utilityCompany = formState.utilityCompany?'':"This Field is required"
+        temp.roofType = formState.roofType?'':"This Field is required"
+        setErrors({
+            ...temp
+        })
+        console.log('temp',temp)
+        
+        return Object.values(temp).every(x => x === '' )
+        
+    }
     //set form state
     const handleChange=(event)=>{
         
@@ -96,7 +121,12 @@ const EstimateForm = () => {
     //handle submit
     const handleSolarCalc= (e) =>{
         e.preventDefault()
-
+        console.log('clicky clicky')
+        if(validate()){
+            alert('works')
+            console.log('errors submit', errors)
+            
+        }else{ console.log(errors)}
         // console.log('formstate', formState)
     }
 
@@ -121,7 +151,7 @@ const EstimateForm = () => {
                 <form onSubmit={handleSolarCalc}>
                     <Grid container justify='center' spacing ={2}>
                         <Grid item xs={12} sm={6}>
-                            <TextField className={classes.formControl} fullWidth id="name" name="name" label="Name" variant="filled" onChange={handleChange}>
+                            <TextField className={classes.formControl} fullWidth id="name" name="name" label="Name" variant="filled" onChange={handleChange} helperText={errors.name} error = {errors.name.length >1}>
                             </TextField>                        
                         </Grid>
                         <Grid item xs={12} sm={6}>
@@ -129,7 +159,11 @@ const EstimateForm = () => {
                             </TextField>
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <FormControl className={classes.formControl} fullWidth variant="filled">
+                            <FormControl 
+                            className={classes.formControl} 
+                            fullWidth 
+                            variant="filled"
+                            error = {errors.residence.length >1}>
                                 <InputLabel id="state-label">State of Residence</InputLabel>
                                 <Select
                                     labelId="state-label"
@@ -137,6 +171,7 @@ const EstimateForm = () => {
                                     name="residence"
                                     value= {formState.residence}
                                     onChange={handleChange}
+
                                 >
                                     <MenuItem value={""}>
                                         <em>None</em>
@@ -145,10 +180,14 @@ const EstimateForm = () => {
                                     <MenuItem value={'nv'}>NV</MenuItem>
                                     {/* <MenuItem value={30}>Thirty</MenuItem> */}
                                 </Select>
+                                {errors.residence && <FormHelperText>{errors.residence}</FormHelperText>}
                             </FormControl>
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <FormControl className={classes.formControl} fullWidth variant="filled">
+                            <FormControl 
+                            className={classes.formControl}
+                            fullWidth variant="filled"                                    
+                            error = {errors.utilityCompany.length >1}>
                             <InputLabel id="utility-company-label">Utility Company</InputLabel>
 
                                 <Select
@@ -156,6 +195,7 @@ const EstimateForm = () => {
                                     name="utilityCompany"
                                     value= {formState.utilityCompany}
                                     onChange={handleChange}
+
                                 >
                                     <MenuItem value="">
                                         <em>None</em>
@@ -165,6 +205,7 @@ const EstimateForm = () => {
                                     <MenuItem value={'edison'}>SCE</MenuItem>
                                     <MenuItem value={'nevada'}>NV Energy</MenuItem>
                                 </Select>
+                                {errors.utilityCompany && <FormHelperText>{errors.utilityCompany}</FormHelperText>}
                             </FormControl>
                         </Grid>
                         <Grid item xs={7} >
@@ -172,7 +213,7 @@ const EstimateForm = () => {
                                 Average Bill
                             </Typography>
                             <Slider
-                                defaultValue={125}
+                                defaultValue={0}
                                 // getAriaValueText={valuetext}
                                 aria-labelledby="discrete-slider"
                                 valueLabelDisplay="auto"
@@ -187,13 +228,16 @@ const EstimateForm = () => {
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <FormControl className={classes.formControl} variant="filled" fullWidth>
+                            <FormControl className={classes.formControl} variant="filled" 
+                            fullWidth
+                            error = {errors.roofType.length >1}>
                             <InputLabel id="roofType-label">Roof Type</InputLabel>
                                 <Select
                                     labelId="roofType-label"
                                     name="roofType"
                                     value={formState.roofType}
                                     onChange={handleChange}
+
                                 >
                                     <MenuItem value="">
                                         <em>None</em>
@@ -204,10 +248,11 @@ const EstimateForm = () => {
                                     <MenuItem value={'flat'}>Flat</MenuItem>
                                     <MenuItem value={'terracotta'}>Terracotta</MenuItem>
                                 </Select>
+                                {errors.roofType && <FormHelperText>{errors.roofType}</FormHelperText>}
                             </FormControl>
                         </Grid>
                         <Grid item xs={12}>
-                        <Button variant="contained" color="secondary" type='submit' component = {RouterLink} to = '/results' children={formState}>
+                        <Button variant="contained" color="secondary" type='submit' >
                             Solar Pulse Check
                         </Button>
                         </Grid>
