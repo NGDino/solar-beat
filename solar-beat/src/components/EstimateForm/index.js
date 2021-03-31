@@ -2,7 +2,7 @@ import { Typography,  TextField, FormControl, Select, MenuItem, InputLabel, Slid
 import React, {useEffect, useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import {
-        Link as RouterLink
+        useHistory
     } from 'react-router-dom'
 
 
@@ -33,6 +33,8 @@ const useStyles = makeStyles((theme) => ({
 // }
 
 const EstimateForm = () => {
+
+    const history = useHistory()
 
 //labels for slider
 // console.log('does this owrk')
@@ -125,9 +127,12 @@ const EstimateForm = () => {
         if(validate()){
             alert('works')
             console.log('errors submit', errors)
+            history.push('/results')
             
         }else{ console.log(errors)}
         // console.log('formstate', formState)
+    
+        
     }
 
     //slider val
@@ -214,6 +219,7 @@ const EstimateForm = () => {
                             </Typography>
                             <Slider
                                 defaultValue={0}
+                                color = 'secondary'
                                 // getAriaValueText={valuetext}
                                 aria-labelledby="discrete-slider"
                                 valueLabelDisplay="auto"
@@ -252,7 +258,7 @@ const EstimateForm = () => {
                             </FormControl>
                         </Grid>
                         <Grid item xs={12}>
-                        <Button variant="contained" color="secondary" type='submit' >
+                        <Button variant="contained" color="secondary" type='submit'   >
                             Solar Pulse Check
                         </Button>
                         </Grid>
