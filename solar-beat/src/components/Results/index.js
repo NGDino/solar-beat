@@ -1,4 +1,6 @@
 import React from 'react';
+import {Box, Grid, Typography} from '@material-ui/core';
+import {makeStyles} from '@material-ui/core/styles'
 
     const rates = {
         1 : 0.23, //0-100
@@ -88,7 +90,7 @@ const Snapshot= () => {
     
 
     return(
-        <div>
+        <Box bgcolor='secondary.light' >
             <div>
                 <h4>Hey {data.name.charAt(0).toUpperCase() + data.name.slice(1)}, Great news looks like solar could be advantageous for your home!</h4>
                 <p><strong>REMEMBER</strong> This is a rough estimate there are several factors that could still lower your savings or disqualify your home, but if you like what you see lets find out, get a quote today!</p>
@@ -97,7 +99,9 @@ const Snapshot= () => {
                     <h1>Year one total Savings ${totalYearOne}</h1>
                     
             </div>
-        </div>
+
+        </Box>
+    
     )
 }
 
