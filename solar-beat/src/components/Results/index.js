@@ -2,17 +2,26 @@ import React from 'react';
 import {Box, Grid, Typography} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles'
 
-    const rates = {
-        1 : 0.23, //0-100
-        2 : 0.25, //101-150
-        3 : 0.27, //150-200
-        4 : 0.275,//201-300
-        5 : 0.28, //300+
-    }
+const rates = {
+    1 : 0.23, //0-100
+    2 : 0.25, //101-150
+    3 : 0.27, //150-200
+    4 : 0.275,//201-300
+    5 : 0.28, //300+
+}
 
-    const sunHours= 1325;
+const sunHours= 1325;
+
+const useStyles  = makeStyles((theme) => ({
+    container: {
+        minHeight: '84vh',
+        marginTop: '0'
+    }
+}));
 
 const Snapshot= () => {
+
+    const classes = useStyles()
     //get form data from local storage
     const data = JSON.parse(localStorage.getItem('customer-data'));
     console.log(data)
@@ -90,15 +99,26 @@ const Snapshot= () => {
     
 
     return(
-        <Box bgcolor='secondary.light' >
-            <div>
-                <h4>Hey {data.name.charAt(0).toUpperCase() + data.name.slice(1)}, Great news looks like solar could be advantageous for your home!</h4>
-                <p><strong>REMEMBER</strong> This is a rough estimate there are several factors that could still lower your savings or disqualify your home, but if you like what you see lets find out, get a quote today!</p>
-                    <h1>Financing as low as ${getPayment(p,r,t)}/mo </h1>
-                    <h1>Estimated Federal Tax Incentive ${getTaxIncentive()}</h1>
-                    <h1>Year one total Savings ${totalYearOne}</h1>
-                    
-            </div>
+        <Box className={classes.container} bgcolor='secondary.light' >
+             <Grid
+                container
+                spacing={0}
+                alignItems="center"
+                justify="center"
+                style={{ minHeight: '55vh' }}
+                >
+                    <Grid item xs={11} sm={10} className={classes.container}>
+                    <div>
+                        <h4>Hey {data.name.charAt(0).toUpperCase() + data.name.slice(1)}, Great news looks like solar could be advantageous for your home!</h4>
+                        <p><strong>REMEMBER</strong> This is a rough estimate there are several factors that could still lower your savings or disqualify your home, but if you like what you see lets find out, get a quote today!</p>
+                            <h1>Financing as low as ${getPayment(p,r,t)}/mo </h1>
+                            <h1>Estimated Federal Tax Incentive ${getTaxIncentive()}</h1>
+                            <h1>Year one total Savings ${totalYearOne}</h1>
+                            
+                    </div>
+                    </Grid> 
+                </Grid>
+           
 
         </Box>
     
