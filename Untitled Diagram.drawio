@@ -1,0 +1,55 @@
+<mxfile host="app.diagrams.net" modified="2021-04-10T17:03:15.494Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36" etag="pWpMP0HlsG_WSFhaqVAT" version="14.5.10" type="github">
+  <diagram id="oK9_RuAjM1LWYMJg2bsH" name="Page-1">
+    <mxGraphModel dx="2401" dy="645" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="UAR-V_zltSb3B3a0JyFw-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="600" width="1020" height="920" as="geometry" />
+        </mxCell>
+        <mxCell id="UAR-V_zltSb3B3a0JyFw-5" value="" style="endArrow=none;html=1;strokeWidth=2;exitX=0;exitY=0.063;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="UAR-V_zltSb3B3a0JyFw-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-141.9999755859375" y="670" as="sourcePoint" />
+            <mxPoint x="1020.0000244140624" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UAR-V_zltSb3B3a0JyFw-7" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="15" y="680" width="965" height="780" as="geometry" />
+        </mxCell>
+        <mxCell id="UAR-V_zltSb3B3a0JyFw-9" value="&lt;h1&gt;Savings Estimate&lt;/h1&gt;&lt;p style=&quot;box-sizing: inherit ; border: 0px ; font-family: &amp;#34;open sans&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; margin: 0px 0px 1.6rem ; outline: 0px ; padding: 0px ; vertical-align: baseline&quot;&gt;&lt;span style=&quot;font-size: 18px ; background-color: rgb(255 , 255 , 255)&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Leo in vitae turpis massa sed elementum tempus.&lt;/span&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="70" y="700" width="870" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="UAR-V_zltSb3B3a0JyFw-10" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="810" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="UAR-V_zltSb3B3a0JyFw-11" value="&lt;font style=&quot;font-size: 16px&quot;&gt;Get Quote&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="437.5" y="815" width="85" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UAR-V_zltSb3B3a0JyFw-15" value="" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="930" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="UAR-V_zltSb3B3a0JyFw-16" value="&lt;span style=&quot;font-size: 36px&quot;&gt;Approximate system Size 6kw&amp;nbsp;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="280" y="935" width="670" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="UAR-V_zltSb3B3a0JyFw-17" value="" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1100" width="130" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="UAR-V_zltSb3B3a0JyFw-18" value="&lt;span style=&quot;font-size: 36px ; text-align: left&quot;&gt;Monthly Payment as low as $150&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1095" width="670" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="UAR-V_zltSb3B3a0JyFw-21" value="" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="1220" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="UAR-V_zltSb3B3a0JyFw-22" value="&lt;span style=&quot;font-size: 36px ; text-align: right&quot;&gt;Estimated Tax Incentive $5000&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1225" width="670" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="UAR-V_zltSb3B3a0JyFw-25" value="" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="765" y="1355" width="130" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="UAR-V_zltSb3B3a0JyFw-26" value="&lt;span style=&quot;font-size: 36px ; text-align: left&quot;&gt;Total Year one Savings $7000&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="1350" width="670" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
