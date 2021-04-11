@@ -15,7 +15,14 @@ const sunHours= 1325;
 const useStyles  = makeStyles((theme) => ({
     container: {
         minHeight: '84vh',
-        marginTop: '0'
+        marginTop: '0',
+    },
+    content: {
+        backgroundColor: '#d3d3d3CC',
+        padding: '1em 1em 1em 1em',
+        boxShadow: '0 5px 5px 4px',
+        border: '5px solid grey',
+        borderRadius: 26,
     }
 }));
 
@@ -107,7 +114,7 @@ const Snapshot= () => {
                 justify="center"
                 style={{ minHeight: '55vh' }}
                 >
-                    <Grid item xs={11} sm={10} className={classes.container}>
+                    <Grid item component='div' xs={11} className={classes.content}>
                     <div>
                         <h4>Hey {data.name.charAt(0).toUpperCase() + data.name.slice(1)}, Great news looks like solar could be advantageous for your home!</h4>
                         <p><strong>REMEMBER</strong> This is a rough estimate there are several factors that could still lower your savings or disqualify your home, but if you like what you see lets find out, get a quote today!</p>

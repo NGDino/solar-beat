@@ -125,7 +125,6 @@ const EstimateForm = () => {
         e.preventDefault()
         console.log('clicky clicky')
         if(validate()){
-            alert('works')
             console.log('errors submit', errors)
             history.push('/results')
             
