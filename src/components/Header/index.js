@@ -3,10 +3,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import {AppBar, Toolbar, Button,IconButton, Drawer, List, ListItem, ListItemText} from '@material-ui/core';
 
 import { Link as RouterLink } from 'react-router-dom';
-import {Link as Scroll} from 'react-scroll';
 
 import MenuIcon from '@material-ui/icons/Menu';
 
+import Equipment from '../../pages/Equipment'
 //menu
 
 
@@ -61,12 +61,12 @@ export default function Header() {
         },
         {
             name: "Equipment",
-            location: "equipment",
-            action: Scroll
+            location: "/equipment",
+            action: RouterLink
         },
         {
             name: "Solar Estimate",
-            location: "/estimate",
+            location: Equipment,
             action: RouterLink
         },
         {

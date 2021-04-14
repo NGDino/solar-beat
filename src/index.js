@@ -15,6 +15,9 @@ const theme = createMuiTheme({
       main: '#dd2c00',
       light: '#fff176'
     },
+    typography: {
+      fontFamily : 'Comic Sans MS'
+    }
   
   }
 })

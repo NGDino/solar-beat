@@ -12,7 +12,7 @@ import {
 //pages
 import Home from './pages/Home';
 import Header from './components/Header';
-// import Equipment from './pages/Equipment';
+import Equipment from './pages/Equipment';
 import Calculator from './pages/Calculator';
 import Contact from './pages/Contact';
 import CalcResults from './pages/CalcResults';
@@ -28,17 +28,15 @@ function App() {
   return (
     <div className="App">
       <Router>
-      {/* <ThemeProvider theme={theme}> */}
         <Header/>
         <Switch>
           <Route exact path = '/' component = {Home} />
-          {/* <Route exact path = '/'  component = {Equipment} /> */}
+          <Route exact path = '/Equipment'  component = {Equipment} />
           <Route exact path = '/estimate'  component = {Calculator} />
           <Route exact path = '/contact'  component = {Contact} />
           <Route exact path = '/results'  component = {CalcResults} />
         </Switch>
         <Footer/>
-        {/* </ThemeProvider> */}
       </Router>
       
         

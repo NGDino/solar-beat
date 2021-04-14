@@ -15,7 +15,7 @@ const Home= () =>{
     <Box>
         <Hero/>
         <HomeCards/>
-        <Equipment  id='equipment'/>
+        
     </Box>
         // </React.Fragment>
         
