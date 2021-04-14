@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {AppBar, Toolbar, Button,IconButton, Drawer, List, ListItem, ListItemText} from '@material-ui/core';
 
-import { Link as RouterLink } from 'react-router-dom'
+import { Link as RouterLink } from 'react-router-dom';
+import {Link as Scroll} from 'react-scroll';
 
 import MenuIcon from '@material-ui/icons/Menu';
 
@@ -55,19 +56,23 @@ export default function Header() {
     const menuList = [
         {
             name: "Home",
-            location: "/"
+            location: "/",
+            action: RouterLink
         },
         {
             name: "Equipment",
-            location: "/equipment"
+            location: "equipment",
+            action: Scroll
         },
         {
             name: "Solar Estimate",
-            location: "/estimate"
+            location: "/estimate",
+            action: RouterLink
         },
         {
             name: "Contact Us",
-            location: "/contact"
+            location: "/contact",
+            action: RouterLink
         },
     ]
     
@@ -108,7 +113,7 @@ export default function Header() {
                             <ListItem
                                 button key={list.name}
                                 onClick={handleDrawerClose}
-                                component = {RouterLink} to = {list.location}
+                                component = {list.action} to = {list.location}
                                 >
                             <ListItemText primary={list.name} />
                             </ListItem>

@@ -11,7 +11,7 @@ const Equipment = () =>{
     
     return(
         <Box bgcolor="secondary.light">
-            <EquipmentHero/>
+            
             <EquipmentCards/>
         </Box>
         

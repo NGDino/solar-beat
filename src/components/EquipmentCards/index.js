@@ -24,6 +24,12 @@ const useStyles= makeStyles({
     },
     wrapper: {
         paddingBottom: '2rem'
+    },
+    bannerText: {
+        backgroundColor: '#d3d3d3CC',
+        margin:'1em',
+        padding: '1em 1em 1em 1em',
+        boxShadow: '0 5px 5px 4px'
     }
 })
 
@@ -32,6 +38,19 @@ const EquipmentCards = () => {
     return(
         <Container className={classes.wrapper}>
                 <Grid container spacing={4} justify="center" >
+                <Grid item xs={12} >
+                        <Box component='div' boxShadow={3} border={4} borderRadius={26} borderColor="grey.700" className={classes.bannerText}>
+                            <Typography variant='h4' component='h2'>
+                                Compare Options and Choose
+                            </Typography>
+                            <Typography variant='p' component='p'>
+                                At SolarBeat we understand there are many options out there for solar.  We partnered with top rated local installers that carry the best equipment brands in the 
+                                industry to give you the freedom to choose what works for your home and budget.  Don't get sold on what a salesman is offering pick the perfect solution for your 
+                                solar journey.
+                            </Typography>
+                        </Box>
+                        
+                    </Grid>
                     <Grid item xs={12} md={5}  >
                     <Box >
                     <Card className={classes.card} borderRadius={26} >
