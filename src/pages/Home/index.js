@@ -3,6 +3,7 @@ import {Box} from '@material-ui/core'
 
 import Hero from '../../components/Hero';
 import HomeCards from '../../components/HomeCards';
+import Equipment from '../Equipment'
 
 
 
@@ -14,6 +15,7 @@ const Home= () =>{
     <Box>
         <Hero/>
         <HomeCards/>
+        
     </Box>
         // </React.Fragment>
         

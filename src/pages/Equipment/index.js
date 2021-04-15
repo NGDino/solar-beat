@@ -1,5 +1,5 @@
 import React from 'react';
-import EquipmentHero from '../../components/EquipmentHero';
+// import EquipmentHero from '../../components/EquipmentHero';
 import EquipmentCards from '../../components/EquipmentCards';
 import {Box} from '@material-ui/core';
 
@@ -11,7 +11,7 @@ const Equipment = () =>{
     
     return(
         <Box bgcolor="secondary.light">
-            <EquipmentHero/>
+             
             <EquipmentCards/>
         </Box>
         

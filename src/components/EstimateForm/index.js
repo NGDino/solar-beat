@@ -151,7 +151,7 @@ const EstimateForm = () => {
             <Paper elevation = {3} className={classes.formContainer} >
 
                 <Typography variant={'h3'}>How Much Can I Save With Solar?</Typography>
-                <Typography varieant = {'p'}>There are many factors that go into how much each indivudual saves with solar and unfortunately solar doesn't work for every home.  The only way to know exactly what solar will look like is with a personalized quote.  This tool gives a simple snapshot of potential savings and tax incentives based on your location and bil amount!</Typography>
+                <Typography varieant = {'p'}>There are many factors that go into how much each individual saves with solar, and unfortunately solar doesn't work for every home.  The only way to know exactly what solar will look like for you is with a personalized quote.  This tool gives a simple snapshot of potential savings and tax incentives based on your location and bil amount!</Typography>
                 <form onSubmit={handleSolarCalc}>
                     <Grid container justify='center' spacing ={2}>
                         <Grid item xs={12} sm={6}>
