@@ -5,8 +5,34 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {ThemeProvider, createMuiTheme} from '@material-ui/core';
 
-const theme = createMuiTheme({
+//fonts
+import HelmetNeue from './assets/fonts/HelmetNeue-Regular.woff';
 
+const helmet = {
+  fontFamily: 'HelmetNeue',
+  fontStyle: 'normal',
+  fontDisplay: 'swap',
+  fontWeight: 400,
+  src: `
+  local('HelmetNeue'),
+  local('HelmetNeue-Regular'),
+  url(${HelmetNeue}) format('woff')
+  `
+}
+
+const theme = createMuiTheme({
+  typography : {
+    fontFamily: [
+      'HelmetNeue'
+    ]
+  },
+  overrides:{
+    MuiCssBaseline: {
+      '@global':{
+        '@font-face':[helmet]
+      }
+    }
+  },
   palette:{
     primary: {
       main: '#e0e0e0'
