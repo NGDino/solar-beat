@@ -144,38 +144,38 @@ const Snapshot= () => {
                         >
 
                         <Grid item xs= {11}>
-                                <Typography variant='h4' gutterBottom>Hey {data.name.charAt(0).toUpperCase() + data.name.slice(1)}, Great news solar might work for you!</Typography>
-                                <Typography varient= 'subtitle1'>Remember this is a rough estimate soley based on your approximate bill price, utility company, and roof type.  Many factors could increase or decrease your actual savings.  The only way to know for sure is a custom quote. Schedule one today!</Typography>
+                                <Typography variant='h4' gutterBottom>Hey {data.name.charAt(0).toUpperCase() + data.name.slice(1)}, Great news, solar might work for you!</Typography>
+                                <Typography variant= 'subtitle1'>Remember this is a rough estimate soley based on your approximate bill price, utility company, and roof type.  Many factors could increase or decrease your actual savings.  The only way to know for sure is a custom quote. Schedule one today!</Typography>
                         </Grid>
                         <Grid container xs={12} direction="row" alignItems="center"  justify="center" className={classes.lineItem}>
-                            <Grid item xs={2}>
+                            <Grid item xs={12} sm={2}>
                                 <img src={panels} className={classes.icons} alt="solar panel icon"/>
                             </Grid>
-                            <Grid item xs={8} >
+                            <Grid item xs={12} sm={8}>
                                 <Typography variant='h5' className={classes.paper}>Estimated system size to power your home {systemSize}KW</Typography>
                             </Grid>
                         </Grid>
                         <Grid container xs={12} direction="row" alignItems="center"  justify="center" className={classes.lineItem}>
-                            <Grid item xs={2}>
+                            <Grid item xs={12} sm={2}>
                                 <img src={taxImage} className={classes.icons} alt="tax incentive icon"/>
                             </Grid>
-                            <Grid item xs={8} >
+                            <Grid item xs={12} sm={8} >
                                 <Typography variant='h5' className={classes.paper}>Potential Federal Tax Incentive ${getTaxIncentive()}</Typography>
                             </Grid>
                         </Grid>                        
                         <Grid container xs={12} direction="row" alignItems="center"  justify="center" className={classes.lineItem}>
-                            <Grid item xs={2}>
+                            <Grid item xs={12} sm={2}>
                                 <img src={monthly} className={classes.icons} alt="payment icon"/>
                             </Grid>
-                            <Grid item xs={8} >
+                            <Grid item xs={12} sm={8} >
                                 <Typography variant='h5' className={classes.paper}>Monthly payments as low as ${getPayment(p,r,t)}/mo </Typography>
                             </Grid>
                         </Grid>
                         <Grid container xs={12} direction="row" alignItems="center"  justify="center" className={classes.lineItem}>
-                            <Grid item xs={2}>
+                            <Grid item xs={12} sm={2}>
                                 <img src={totalSavings} className={classes.icons} alt="yearly savings"/>
                             </Grid>
-                            <Grid item xs={8} >
+                            <Grid item xs={12} sm={8} >
                                 <Typography variant='h5' className={classes.paper}>Total potential first year savings of ${totalYearOne} </Typography>
                             </Grid>
                         </Grid>

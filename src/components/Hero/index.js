@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundImage: `url(${heroImage})`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
-        height: '85vh',
+        minHeight: '75vh',
         padding: '20 px',
         // marginBottom: '20px'
         [theme.breakpoints.down('sm')]: {
@@ -54,7 +54,7 @@ const Hero = () => {
                         Check Your Solar Pulse with SolarBeat
                     </Typography>
                     <Typography variant="subtitle1">
-                        Solar doesn't work for everyone. Use our free tool to check your homes solar fitness without the sales pitch or giving out your personal information.  
+                        Solar doesn't work for everyone. Use our free tool to check your homes solar fitness without the sales pitch or giving out personal information.  
                     </Typography>
                 </Box>
                 

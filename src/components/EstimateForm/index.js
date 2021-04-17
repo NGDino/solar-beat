@@ -12,8 +12,8 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: '0 5px 5px 4px',
         border: '5px solid grey',
         borderRadius: 26,
-        margin: '2em',
-        padding: '2em'
+        margin: '1em 0em 2em 0em',
+        padding: '1em'
     },
     formControl: {
         margin: theme.spacing(2),
@@ -150,8 +150,8 @@ const EstimateForm = () => {
         <Box>
             <Paper elevation = {3} className={classes.formContainer} >
 
-                <Typography variant={'h3'}>How Much Can I Save With Solar?</Typography>
-                <Typography varieant = {'p'}>There are many factors that go into how much each individual saves with solar, and unfortunately solar doesn't work for every home.  The only way to know exactly what solar will look like for you is with a personalized quote.  This tool gives a simple snapshot of potential savings and tax incentives based on your location and bil amount!</Typography>
+                <Typography variant={'h4'}>How Much Can I Save With Solar?</Typography>
+                <Typography variant = {'body2'}>There are many factors that go into how much each individual saves with solar and the only way to know exactly what solar will look like for you is with a personalized quote.  This tool gives a simple snapshot of potential savings and tax incentives based on your location and bill amount!</Typography>
                 <form onSubmit={handleSolarCalc}>
                     <Grid container justify='center' spacing ={2}>
                         <Grid item xs={12} sm={6}>

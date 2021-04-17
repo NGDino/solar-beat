@@ -51,13 +51,13 @@ const Footer = () => {
                         </Button>    
                     </Grid>
                     <Grid item xs={12} md={6}>                                  
-                        <Link href="https://www.solarreviews.com/blog/what-are-the-most-efficient-solar-panels" target="_blank" color = 'textSecondary' className={classes.links} display='block' gutterBottom>
+                        <Link href="https://www.solarreviews.com/blog/what-are-the-most-efficient-solar-panels" target="_blank" color = 'textSecondary' className={classes.links} display='block' gutterBottom variant="body1">
                             Most Efficient Panels 2021
                         </Link>                
-                        <Link href="https://www.costofsolar.com/is-my-home-worth-more-with-solar-energy/#" color = 'textSecondary' target="_blank" className={classes.links} display='block' gutterBottom >
+                        <Link href="https://www.costofsolar.com/is-my-home-worth-more-with-solar-energy/#" color = 'textSecondary' target="_blank" className={classes.links} display='block' gutterBottom variant="body1">
                             Solar Increases Home Value
                         </Link>                                   
-                        <Link href="#" color = 'textSecondary' className={classes.links} display='block' gutterBottom>
+                        <Link href="#" color = 'textSecondary' className={classes.links} display='block' gutterBottom variant="body1">
                             Federal Tax Credit Extended
                         </Link>                
                     </Grid>

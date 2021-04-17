@@ -66,7 +66,7 @@ export default function Header() {
         },
         {
             name: "Solar Estimate",
-            location: Equipment,
+            location: "/estimate",
             action: RouterLink
         },
         {

@@ -4,9 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {ThemeProvider, createMuiTheme} from '@material-ui/core';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 //fonts
 import HelmetNeue from './assets/fonts/HelmetNeue-Regular.woff';
+import LondrinaSolid  from './assets/fonts/LondrinaSolid-Regular.woff'
 
 const helmet = {
   fontFamily: 'HelmetNeue',
@@ -20,17 +22,44 @@ const helmet = {
   `
 }
 
+const londrina = {
+  fontFamily: 'LondrinaSolid',
+  fontStyle: 'normal',
+  fontDisplay: 'swap',
+  fontWeight: 400,
+  src: `
+  local('LondrinaSolid'),
+  local('LondrinaSolid-Regular'),
+  url(${LondrinaSolid}) format('woff')
+  `
+}
+
 const theme = createMuiTheme({
   typography : {
     fontFamily: [
-      'HelmetNeue'
-    ]
+      'LondrinaSolid', 'HelmetNeue'
+    ],
+    h5: {
+      fontSize:'1.5rem'
+    }, 
+    h4: {
+      fontSize:'2.5rem'
+    },
+    subtitle1: {
+      fontSize:'1.25rem'
+    },
+    body2:{
+      fontFamily: [helmet],
+      fontSize: '1.2rem'
+    },
+   
   },
   overrides:{
     MuiCssBaseline: {
       '@global':{
-        '@font-face':[helmet]
-      }
+        '@font-face':[londrina, helmet]
+      },
+      
     }
   },
   palette:{
@@ -40,16 +69,15 @@ const theme = createMuiTheme({
     secondary: {
       main: '#dd2c00',
       light: '#fff176'
-    },
-    typography: {
-      fontFamily : 'Comic Sans MS'
     }
+
   
   }
 })
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
+    <CssBaseline/>
     <App />
   </ThemeProvider>,
   document.getElementById('root')
