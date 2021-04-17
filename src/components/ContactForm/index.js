@@ -24,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: 26,
     },
     form: {
-        // width: '400',
         textAlign: 'center',
     }
 }));

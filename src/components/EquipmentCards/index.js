@@ -43,7 +43,7 @@ const EquipmentCards = () => {
                             <Typography variant='h4' component='h2'>
                                 Compare Options and Choose
                             </Typography>
-                            <Typography variant='p' component='p'>
+                            <Typography variant='body2' >
                                 At SolarBeat we understand there are many options out there for solar.  We partnered with top rated local installers that carry the best equipment brands in the 
                                 industry to give you the freedom to choose what works for your home and budget.  Don't get sold on what a salesman is offering pick the perfect solution for your 
                                 solar journey.
@@ -67,7 +67,7 @@ const EquipmentCards = () => {
                                     <Typography gutterBottom variant="h5" component="h2">
                                         Top of the Line Panels
                                     </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
+                                    <Typography variant="body2" color="textSecondary" >
                                         Compare top of line panels including high efficiancy panels from industry leaders such as:
                                         <List>
                                             <ListItem>
@@ -118,7 +118,7 @@ const EquipmentCards = () => {
                                     <Typography gutterBottom variant="h5" component="h2">
                                         The Right Inverter for the Job
                                     </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
+                                    <Typography variant="body2" color="textSecondary" >
                                         Inverters are what converts the energy generated from the solar panels to useable power for your home.  Sometimes a single string inverter works better,
                                         and sometimes a job needs a microinverter for every panel.  Our experts take this into account for every job and make sure we get the right equipment for your 
                                         home to make sure you have the most efficient system possible!

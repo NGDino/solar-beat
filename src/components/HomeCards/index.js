@@ -24,10 +24,7 @@ const HomeCards = () => {
             marginBottom: '0', // 16:9
         },
         cardStyle : {
-            
-            
-            
-            height: '70vh',
+            minHeight: '70vh',
             padding: '1em',
             paddingBottom: '2em',
             boxShadow: '0 5px 5px 4px',
@@ -52,7 +49,7 @@ const HomeCards = () => {
                             
                                 {/* <img src={calculator} alt='calculator illustration'/> */}
                                 <CardContent>
-                                    <Typography gutterBottom varient='h5' component="h2">
+                                    <Typography gutterBottom variant='h5'>
                                         Calculate Potential Savings
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
@@ -74,7 +71,7 @@ const HomeCards = () => {
                             </CardMedia>
                                 
                                 <CardContent>
-                                    <Typography gutterBottom varient='h4' component="h4">
+                                    <Typography gutterBottom variant='h4' component="h4">
                                         Compare and Save
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
@@ -96,7 +93,7 @@ const HomeCards = () => {
                             </CardMedia>
                                 
                                 <CardContent>
-                                    <Typography gutterBottom varient='h4' component="h4">
+                                    <Typography gutterBottom variant='h4' component="h4">
                                         Own Your Power
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
