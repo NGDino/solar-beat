@@ -17,7 +17,7 @@ const useStyles= makeStyles({
         objectFit: 'contain'
     },
     card: {
-        height: 700,
+        minHeight: '81vh',
         boxShadow: '0 5px 5px 4px',
         border: '5px solid grey',
         borderRadius: 26,
