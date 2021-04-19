@@ -25,9 +25,13 @@ const useStyles = makeStyles((theme) => ({
     },
     list: {
         width: 250,
+        
     },
     fullList: {
         width: '100%',
+    },
+    listText:{
+        fontSize: '1.2em'
     },
     logo: {
         height: "80px",
@@ -113,6 +117,7 @@ export default function Header() {
                                 button key={list.name}
                                 onClick={handleDrawerClose}
                                 component = {list.action} to = {list.location}
+                                
                                 >
                             <ListItemText primary={list.name} />
                             </ListItem>

@@ -24,7 +24,7 @@ const HomeCards = () => {
             marginBottom: '0', // 16:9
         },
         cardStyle : {
-            minHeight: '70vh',
+            minHeight: '65vh',
             padding: '1em',
             paddingBottom: '2em',
             boxShadow: '0 5px 5px 4px',
@@ -71,7 +71,7 @@ const HomeCards = () => {
                             </CardMedia>
                                 
                                 <CardContent>
-                                    <Typography gutterBottom variant='h4' component="h4">
+                                    <Typography gutterBottom variant='h5'>
                                         Compare and Save
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
@@ -93,7 +93,7 @@ const HomeCards = () => {
                             </CardMedia>
                                 
                                 <CardContent>
-                                    <Typography gutterBottom variant='h4' component="h4">
+                                    <Typography gutterBottom variant='h5'>
                                         Own Your Power
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">

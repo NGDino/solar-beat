@@ -69,6 +69,9 @@ const theme = createMuiTheme({
     secondary: {
       main: '#dd2c00',
       light: '#fff176'
+    },
+    listItemText:{
+      fontSize:'0.7em',//Insert your required size
     }
 
   

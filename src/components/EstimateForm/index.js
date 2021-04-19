@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
         padding: '1em'
     },
     formControl: {
-        margin: theme.spacing(2),
+        marginTop: theme.spacing(1),
         
     },
     selectEmpty: {
@@ -24,6 +24,10 @@ const useStyles = makeStyles((theme) => ({
     },
     button: {
         // display: 'block'
+    },
+    slider: {
+        margin: '1em',
+        maxWidth: 800
     }
 }));
 
@@ -43,26 +47,26 @@ const EstimateForm = () => {
             value: 0,
             label: '$0',
         },
-        {
-            value: 50,
-            label: '$50',
-        },
+        // {
+        //     value: 50,
+        //     label: '$50',
+        // },
         {
             value: 100,
             label: '$100',
         },
-        {
-            value: 150,
-            label: '$150',
-        },
+        // {
+        //     value: 150,
+        //     label: '$150',
+        // },
         {
             value: 200,
             label: '$200',
         },
-        {
-            value: 250,
-            label: '$250',
-        },
+        // {
+        //     value: 250,
+        //     label: '$250',
+        // },
         {
             value: 300,
             label: '$300',
@@ -212,7 +216,7 @@ const EstimateForm = () => {
                                 {errors.utilityCompany && <FormHelperText>{errors.utilityCompany}</FormHelperText>}
                             </FormControl>
                         </Grid>
-                        <Grid item xs={7} >
+                        <Grid item xs={12} className={classes.slider}>
                             <Typography id="discrete-slider" gutterBottom>
                                 Average Bill
                             </Typography>
@@ -228,8 +232,8 @@ const EstimateForm = () => {
                                 max={400}
                                 name="billAmount"
                                 onChange={sliderValue}
-                                // onChange={}
-                                // onChangeCommitted={handleChange}
+                                
+                                
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
