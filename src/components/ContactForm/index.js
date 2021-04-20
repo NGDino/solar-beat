@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import {Paper, TextField, FormControl, RadioGroup, FormControlLabel, Button, Radio, FormLabel, Grid, Typography} from '@material-ui/core'
-import {makeStyles} from '@material-ui/core/styles'
+import {Paper, TextField, FormControl, RadioGroup, FormControlLabel, Button, Radio, FormLabel, Grid, Typography} from '@material-ui/core';
+import {makeStyles} from '@material-ui/core/styles';
+import emailjs from 'emailjs-com';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -81,10 +82,15 @@ const ContactForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        console.log('etarg',e.target)
         console.log('submit', values, errors)
         if(validate()){
-            alert('works biotch')
-            console.log('errors submit', errors)
+            emailjs.sendForm('service_tyix8du', 'solar-beat-req', e.target, 'user_n0ZXlyXiFHLSvNhfhMQHr')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
         }else{ console.log(errors)}
     }
 
