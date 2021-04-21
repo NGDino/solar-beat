@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {Paper, TextField, FormControl, RadioGroup, FormControlLabel, Button, Radio, FormLabel, Grid, Typography} from '@material-ui/core';
+import {Paper, TextField, FormControl, RadioGroup, FormControlLabel, Button, Radio, FormLabel, Grid, Typography, Snackbar, IconButton} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import emailjs from 'emailjs-com';
-
+import CloseIcon from '@material-ui/icons/Close';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -76,15 +76,23 @@ const ContactForm = () => {
             ...values,
             [name]: value
         });
-        console.log(values)
         
     }
+        // snackbar code 
+        const [open, setOpen] = React.useState(false);
+
+        const handleClose = (event, reason) => {
+            if (reason === 'clickaway') {
+                return;
+            }
+        
+            setOpen(false);
+        };
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log('etarg',e.target)
-        console.log('submit', values, errors)
         if(validate()){
+            setOpen(true)
             emailjs.sendForm('service_tyix8du', 'solar-beat-req', e.target, 'user_n0ZXlyXiFHLSvNhfhMQHr')
             .then((result) => {
                 console.log(result.text);
@@ -93,6 +101,8 @@ const ContactForm = () => {
             });
         }else{ console.log(errors)}
     }
+
+    
 
     return (
         <div className={classes.root}>
@@ -220,6 +230,24 @@ const ContactForm = () => {
                                     Request a Quote
                             </Button>
                             </Grid>
+                            <Snackbar
+                                anchorOrigin={{ 
+                                    vertical: 'bottom', 
+                                    horizontal: 'center'
+                                }}
+                                autoHideDuration={6000}
+                                open={open}
+                                onClose={handleClose}
+                                message="Success! Thank you for your inquiry!"
+                                action={
+                                    <React.Fragment>
+                                        <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
+                                            <CloseIcon fontSize="small" />
+                                        </IconButton>
+                                    </React.Fragment>
+                                }
+                                
+                            />
 
                     </Grid>
                     </form>
