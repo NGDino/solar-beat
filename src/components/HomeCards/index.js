@@ -24,7 +24,7 @@ const HomeCards = () => {
             marginBottom: '0', // 16:9
         },
         cardStyle : {
-            minHeight: '65vh',
+            minHeight: '70vh',
             padding: '1em',
             paddingBottom: '2em',
             boxShadow: '0 5px 5px 4px',
