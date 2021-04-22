@@ -134,7 +134,7 @@ const Snapshot= () => {
                 justify="center"
                 >
                     <Grid container
-                        xs={11} 
+                        // xs={11} 
                         spacing={0}
                         style={{ minHeight: '55vh' }}
                         className={classes.content}
@@ -145,7 +145,7 @@ const Snapshot= () => {
                         <Grid item xs= {11}>
                                 <Typography variant='h4' gutterBottom>Hey {data.name.charAt(0).toUpperCase() + data.name.slice(1)}, Great news, solar might work for you!
                                 </Typography>
-                                <Typography variant='body1' gutterBottom>Hey {data.name.charAt(0).toUpperCase() + data.name.slice(1)}, Great news, solar might work for you!
+                                <Typography variant='body1' gutterBottom>Remember, this is a rough estimate.  To find out exactly what solar will look like for your home schedule a free quote today!
                                 </Typography>
                         </Grid>
                         <Grid container xs={12} direction="row" alignItems="center"  justify="center" className={classes.lineItem}>
