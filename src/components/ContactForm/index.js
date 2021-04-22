@@ -4,6 +4,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import emailjs from 'emailjs-com';
 import CloseIcon from '@material-ui/icons/Close';
 
+
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -32,6 +33,12 @@ const useStyles = makeStyles((theme) => ({
 
 
 const ContactForm = () => {
+    let estimateData = JSON.parse(localStorage.getItem('customer-data'));
+    if(!estimateData){
+        estimateData = {}
+    }
+    console.log(estimateData)
+    
     const initialValues = {
         name: '',
         email: '',
@@ -91,9 +98,12 @@ const ContactForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        
         if(validate()){
             setOpen(true)
-            emailjs.sendForm('service_tyix8du', 'solar-beat-req', e.target, 'user_n0ZXlyXiFHLSvNhfhMQHr')
+            const emailData = {values, estimateData}
+            console.log(emailData)
+            emailjs.send('service_tyix8du', 'solar-beat-req', emailData, 'user_n0ZXlyXiFHLSvNhfhMQHr')
             .then((result) => {
                 console.log(result.text);
             }, (error) => {

@@ -1,6 +1,8 @@
 import React from 'react';
-import {Box, Grid, Typography} from '@material-ui/core';
-import {makeStyles} from '@material-ui/core/styles'
+import {Box, Grid, Typography, Button} from '@material-ui/core';
+import {makeStyles} from '@material-ui/core/styles';
+import { Link as RouterLink } from 'react-router-dom';
+
 
 //icons
 import panels from '../../assets/images/solarPanel.png';
@@ -32,6 +34,7 @@ const useStyles  = makeStyles((theme) => ({
         boxShadow: '0 5px 5px 4px',
         border: '5px solid grey',
         borderRadius: 26,
+        maxWidth: '1020px'
     },
     icons: {
         height: '7rem'
@@ -42,7 +45,14 @@ const useStyles  = makeStyles((theme) => ({
     },
     lineItem: {
         margin: '2em'
-    }
+    },
+    Button:{
+        lineHeight: 5.5,
+        minWidth: 300,
+        borderRadius: 26,
+        boxShadow: '0 5px 5px 4px',
+        backgroundColor: '#006633'
+    },
 }));
 
 const Snapshot= () => {
@@ -50,11 +60,8 @@ const Snapshot= () => {
     const classes = useStyles()
     //get form data from local storage
     const data = JSON.parse(localStorage.getItem('customer-data'));
-    console.log(data)
-
 
     const billPrice = data.billAmount
-    console.log('bill price', billPrice)
 
 
 
@@ -75,8 +82,6 @@ const Snapshot= () => {
     }
     const systemSize = (setRate(billPrice)).toFixed(2)
     const systemPrice = (setRate(billPrice) * 1000)*4.00
-    console.log('yearlydude', systemPrice)
-
 
 
     function getTaxIncentive(total){
@@ -101,9 +106,6 @@ const Snapshot= () => {
     function getPayment(p,r,t){
 
 
-        console.log(p)
-
-
         const d =  (Math.pow((1+r), t) - 1 ) / (r * (Math.pow((1+r),t)))
 
         const payment = (p / d).toFixed(2)
@@ -121,9 +123,6 @@ const Snapshot= () => {
 
 
     const totalYearOne = (parseFloat(yearlySave)+ parseFloat(taxCredit)).toFixed(2)
-    console.log('numbers needed',totalYearOne)
-
-
 
 
     return(
@@ -144,8 +143,10 @@ const Snapshot= () => {
                         >
 
                         <Grid item xs= {11}>
-                                <Typography variant='h4' gutterBottom>Hey {data.name.charAt(0).toUpperCase() + data.name.slice(1)}, Great news, solar might work for you!</Typography>
-                                <Typography variant= 'subtitle1'>Remember this is a rough estimate soley based on your approximate bill price, utility company, and roof type.  Many factors could increase or decrease your actual savings.  The only way to know for sure is a custom quote. Schedule one today!</Typography>
+                                <Typography variant='h4' gutterBottom>Hey {data.name.charAt(0).toUpperCase() + data.name.slice(1)}, Great news, solar might work for you!
+                                </Typography>
+                                <Typography variant='body1' gutterBottom>Hey {data.name.charAt(0).toUpperCase() + data.name.slice(1)}, Great news, solar might work for you!
+                                </Typography>
                         </Grid>
                         <Grid container xs={12} direction="row" alignItems="center"  justify="center" className={classes.lineItem}>
                             <Grid item xs={12} sm={2}>
@@ -178,20 +179,22 @@ const Snapshot= () => {
                             <Grid item xs={12} sm={8} >
                                 <Typography variant='h5' className={classes.paper}>Total potential first year savings of ${totalYearOne} </Typography>
                             </Grid>
+                            <Typography variant='h4' gutterBottom>
+                                Like what you see?
+                            </Typography>
+                            <Grid item xs={12}>
+                                <Button 
+                                className = {classes.Button}
+                                id="callToAction" 
+                                color="secondary"
+                                variant= "contained"
+                                component = {RouterLink} to = '/contact'
+                                >
+                                    Get a Quote Today!
+                                </Button> 
+                            </Grid>
+                        
                         </Grid>
-
-                    
-
-
-
-                    {/* <div>
-                        <h4></h4>
-                        <p><strong>REMEMBER</strong> This is a rough estimate there are several factors that could still lower your savings or disqualify your home, but if you like what you see lets find out, get a quote today!</p>
-                            <h1>Financing as low as ${getPayment(p,r,t)}/mo </h1>
-                            <h1>Estimated Federal Tax Incentive ${getTaxIncentive()}</h1>
-                            <h1>Year one total Savings ${totalYearOne}</h1>
-
-                    </div> */}
                     </Grid>
                 </Grid>
 

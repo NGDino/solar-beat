@@ -104,7 +104,6 @@ const EstimateForm = () => {
         setErrors({
             ...temp
         })
-        console.log('temp',temp)
         
         return Object.values(temp).every(x => x === '' )
         
@@ -118,7 +117,6 @@ const EstimateForm = () => {
             ...formState,
             [name]: value
         });
-        // console.log(formState)
         
     }
 
@@ -252,7 +250,7 @@ const EstimateForm = () => {
                                         <em>None</em>
                                     </MenuItem>
                                     <MenuItem value={'composite'}>Composite</MenuItem>
-                                    <MenuItem value={'cementTile'}>Cement Tyle</MenuItem>
+                                    <MenuItem value={'cementTile'}>Cement Tile</MenuItem>
                                     <MenuItem value={'metal'}>Metal</MenuItem>
                                     <MenuItem value={'flat'}>Flat</MenuItem>
                                     <MenuItem value={'terracotta'}>Terracotta</MenuItem>
@@ -261,7 +259,7 @@ const EstimateForm = () => {
                             </FormControl>
                         </Grid>
                         <Grid item xs={12}>
-                        <Button variant="contained" color="secondary" type='submit'   >
+                        <Button variant="contained" color="secondary" type='submit' >
                             Solar Pulse Check
                         </Button>
                         </Grid>

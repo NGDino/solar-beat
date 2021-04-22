@@ -52,11 +52,10 @@ const EquipmentCards = () => {
                         
                     </Grid>
                     <Grid item xs={12} md={5}  >
-                    <Box >
-                    <Card className={classes.card} borderRadius={26} >
+                    <Box component='div'>
+                    <Card className={classes.card}  >
                             {/* <CardActionArea> */}
-                                <CardMedia
-                                borderRadius={26} 
+                                <CardMedia 
                                 component="img"
                                 alt="Different Solar Panels"
                                 height="400"
@@ -69,6 +68,7 @@ const EquipmentCards = () => {
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" >
                                         Compare top of line panels including high efficiancy panels from industry leaders such as:
+                                        </Typography>
                                         <List>
                                             <ListItem>
                                                 <ListItemIcon>
@@ -95,7 +95,7 @@ const EquipmentCards = () => {
                                                 Panasonic
                                             </ListItem>
                                         </List>
-                                    </Typography>
+                                    
                                 </CardContent>
                             {/* </CardActionArea> */}
 

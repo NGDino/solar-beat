@@ -10,8 +10,8 @@ import {Box} from '@material-ui/core';
 const Equipment = () =>{
     
     return(
-        <Box bgcolor="secondary.light">
-             
+        <Box component='div' bgcolor="secondary.light">
+            
             <EquipmentCards/>
         </Box>
         

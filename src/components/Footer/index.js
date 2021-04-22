@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box, Typography,Link, Grid, Button} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
-import { Link as RouterLink } from 'react-router-dom'
+import { Link as RouterLink } from 'react-router-dom';
 
 const useStyles = makeStyles({
     
@@ -22,11 +22,7 @@ const useStyles = makeStyles({
         minWidth: 300,
         borderRadius: 26,
         boxShadow: '0 5px 5px 4px',
-       
     },
-    gosolar:{
-
-    }
 })
 
 const Footer = () => {
