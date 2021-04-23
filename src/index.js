@@ -48,6 +48,10 @@ const theme = createMuiTheme({
     subtitle1: {
       fontSize:'1.25rem'
     },
+    subtitle2: {
+      fontSize:'1.25rem',
+      fontFamily: [helmet]
+    },
     body2:{
       fontFamily: [helmet],
       fontSize: '1.1rem'

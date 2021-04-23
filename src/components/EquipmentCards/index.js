@@ -28,7 +28,7 @@ const useStyles= makeStyles({
     bannerText: {
         backgroundColor: '#d3d3d3CC',
         margin:'1em',
-        padding: '1em 1em 1em 1em',
+        padding: '4em 1em 4em 1em',
         boxShadow: '0 5px 5px 4px'
     }
 })
@@ -43,97 +43,61 @@ const EquipmentCards = () => {
                             <Typography variant='h4' component='h2'>
                                 Compare Options and Choose
                             </Typography>
-                            <Typography variant='body2' >
-                                At SolarBeat we understand there are many options out there for solar.  We partnered with top rated local installers that carry the best equipment brands in the 
-                                industry to give you the freedom to choose what works for your home and budget.  Don't get sold on what a salesman is offering pick the perfect solution for your 
-                                solar journey.
+                            <Typography variant='subtitle2' >
+                                At SolarBeat we understand there are many options out there for solar.  We partnered with many top rated local installers with tons of options for top rated equipment. Giving you the freedom to choose what works nest for your home and budget.  Don't get sold on whatever a salesman from one company is offering. Compare options and pick the perfect solution for your home.
                             </Typography>
                         </Box>
                         
                     </Grid>
                     <Grid item xs={12} md={5}  >
-                    <Box component='div'>
-                    <Card className={classes.card}  >
-                            {/* <CardActionArea> */}
-                                <CardMedia 
-                                component="img"
-                                alt="Different Solar Panels"
-                                height="400"
-                                image={Panels}
-                                title="Different Solar Panels"
-                                />
-                                <CardContent>
-                                    <Typography gutterBottom variant="h5" component="h2">
-                                        Top of the Line Panels
-                                    </Typography>
-                                    <Typography variant="body2" color="textSecondary" >
-                                        Compare top of line panels including high efficiancy panels from industry leaders such as:
+                        <Card className={classes.card}  >
+                                {/* <CardActionArea> */}
+                                    <CardMedia 
+                                    component="img"
+                                    alt="Different Solar Panels"
+                                    height="350"
+                                    image={Panels}
+                                    title="Different Solar Panels"
+                                    />
+                                    <CardContent>
+                                        <Typography gutterBottom variant="h5" component="h2">
+                                            Top of the Line Panels
                                         </Typography>
-                                        <List>
-                                            <ListItem>
-                                                <ListItemIcon>
-                                                    <EcoIcon />
-                                                </ListItemIcon>
-                                                REC
-                                            </ListItem>
-                                            <ListItem>
-                                                <ListItemIcon>
-                                                    <EcoIcon />
-                                                </ListItemIcon>
-                                                SunPower
-                                            </ListItem>
-                                            <ListItem>
-                                                <ListItemIcon>
-                                                    <EcoIcon />
-                                                </ListItemIcon>
-                                                LG
-                                            </ListItem>
-                                            <ListItem>
-                                                <ListItemIcon>
-                                                    <EcoIcon />
-                                                </ListItemIcon>
-                                                Panasonic
-                                            </ListItem>
-                                        </List>
-                                    
-                                </CardContent>
-                            {/* </CardActionArea> */}
+                                        <Typography variant="body2" color="textSecondary" >
+                                            Compare top of line panels including high efficiancy panels from industry leaders such as:
+                                            </Typography>
+                                            <List>
+                                                <ListItem>
+                                                    <ListItemIcon>
+                                                        <EcoIcon />
+                                                    </ListItemIcon>
+                                                    REC
+                                                </ListItem>
+                                                <ListItem>
+                                                    <ListItemIcon>
+                                                        <EcoIcon />
+                                                    </ListItemIcon>
+                                                    SunPower
+                                                </ListItem>
+                                                <ListItem>
+                                                    <ListItemIcon>
+                                                        <EcoIcon />
+                                                    </ListItemIcon>
+                                                    LG
+                                                </ListItem>
+                                            </List>
+                                        
+                                    </CardContent>
+                                {/* </CardActionArea> */}
 
-                        </Card>
-
-                    </Box>
-                        
-                    
+                            </Card>
                     </Grid>
-                    <Grid item xs={12} md={5}>
-                        <Card className={classes.card}>
-                                <CardMedia
-                                component="img"
-                                alt="String or Micro Inverter"
-                                height="400"
-                                image={Inverter}
-                                title="String or Micro Inverter"
-                                />
-                                <CardContent>
-                                    <Typography gutterBottom variant="h5" component="h2">
-                                        The Right Inverter for the Job
-                                    </Typography>
-                                    <Typography variant="body2" color="textSecondary" >
-                                        Inverters are what converts the energy generated from the solar panels to useable power for your home.  Sometimes a single string inverter works better,
-                                        and sometimes a job needs a microinverter for every panel.  Our experts take this into account for every job and make sure we get the right equipment for your 
-                                        home to make sure you have the most efficient system possible!
-                                    </Typography>
-                                </CardContent>
-
-                        </Card>
-                    </Grid>
-
                     <Grid item xs={12} md={5}>
                         <Card className={classes.card}>
                                 <CardMedia className= {classes.img}
                                 component="img"
                                 alt="LG Chem and Sonnen Battery options"
-                                height="400"
+                                height="350"
                                 image={Batteries}
                                 title="LG Chem and Sonnen Battery options"
                                 />
@@ -142,18 +106,40 @@ const EquipmentCards = () => {
                                         Battery Backups
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
-                                        Explore battery backups to not only make insure your power stays on during backups, but also to protect your from non-bypassable charges from 
-                                        your energy company.  Many different sizes and Options from top manufactures to match your needs.
+                                        Explore battery backup options to keep your home running during outages. Batteries can also increase savings by avoiding your utility companies non-bypassable charges when you pull from the grid, and also may have seperate rebates.  Compare different batteries from top brands to find a perfect match!
                                     </Typography>
                                 </CardContent>
                         </Card>
+                    </Grid> 
+                    <Grid item xs={12} md={5}>
+                        <Card className={classes.card}>
+                                <CardMedia
+                                component="img"
+                                alt="String or Micro Inverter"
+                                height="350"
+                                image={Inverter}
+                                title="String or Micro Inverter"
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="h2">
+                                        The Right Inverter for the Job
+                                    </Typography>
+                                    <Typography variant="body2" color="textSecondary" >
+                                        Inverters convert the energy generated from the solar panels to useable power for your home.  In some cases  a single string inverter is more efficient, and sometimes microinverter is necessary for every panel.  Our experts take this into account for every job and make sure we get the right equipment for your 
+                                        home to make sure you have the most efficient system possible!
+                                    </Typography>
+                                </CardContent>
+
+                        </Card>
                     </Grid>
+
+
                     <Grid item xs={12} md={5}>
                         <Card className={classes.card}>
                             <CardMedia className= {classes.img}
                             component="img"
                             alt="Roof or Ground Mounting Options"
-                            height="400"
+                            height="350"
                             image={Mounts}
                             title="Roof or Ground Mounting Options"
                             />
@@ -162,8 +148,7 @@ const EquipmentCards = () => {
                                     We'll Get Panels Anywhere
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
-                                    Has another company told you they cant use your roof?  Our partners specialize in all roof types, flat, metal, or too steep no problem! Want a ground mount or a 
-                                    shade structure? Our partners do those too! Give us a call and have us take a look.
+                                    Has another company told you they cant use your roof?  Our partners specialize in all roof types: flat, metal, or too steep? No problem! Want a ground mount or shade structure? Our partners do those too! Give us a call and have us take a look.
                                 </Typography>
                             </CardContent>
                         </Card>

@@ -9,11 +9,6 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
     },
-    formEl: {
-        margin: theme.spacing(2),
-        
-        
-    },
     selectEmpty: {
         marginTop: theme.spacing(2),
     },
@@ -37,7 +32,6 @@ const ContactForm = () => {
     if(!estimateData){
         estimateData = {}
     }
-    console.log(estimateData)
     
     const initialValues = {
         name: '',
@@ -68,7 +62,6 @@ const ContactForm = () => {
         setErrors({
             ...temp
         })
-        console.log('temp',temp)
         
         return Object.values(temp).every(x => x === '' )
         
@@ -102,10 +95,8 @@ const ContactForm = () => {
         if(validate()){
             setOpen(true)
             const emailData = {values, estimateData}
-            console.log(emailData)
             emailjs.send('service_tyix8du', 'solar-beat-req', emailData, 'user_n0ZXlyXiFHLSvNhfhMQHr')
             .then((result) => {
-                console.log(result.text);
             }, (error) => {
                 console.log(error.text);
             });

@@ -125,9 +125,7 @@ const EstimateForm = () => {
     //handle submit
     const handleSolarCalc= (e) =>{
         e.preventDefault()
-        console.log('clicky clicky')
         if(validate()){
-            console.log('errors submit', errors)
             history.push('/results')
             
         }else{ console.log(errors)}

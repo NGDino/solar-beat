@@ -53,7 +53,7 @@ const HomeCards = () => {
                                         Calculate Potential Savings
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" >
-                                        Quickly see an approximate system size, how much your tax incentive could be, and how much you could be saving per month.  Only provide your contact info if you like what you see and want more info!
+                                        Quickly see an approximate system size, how much your Federal solar tax incentive could be, and approximate monthly solar payment.  No contact info required!
                                     </Typography>
                                 </CardContent>
 
@@ -75,7 +75,7 @@ const HomeCards = () => {
                                         Compare and Save
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" >
-                                        Like what you see?  Get a personalized system designed and our solar experts can help you choose from a selection of top brands installed by top rated local installers. Choose a finance plan that works for you, including many $0 down options.  
+                                        Like what you see?  Schedule a free comparative quote and see multiple options on top rated solar panels by local installers near you. Many $0 down options available!
                                     </Typography>
                                 </CardContent>
 
@@ -97,7 +97,7 @@ const HomeCards = () => {
                                         Own Your Power
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
-                                        Once you find the perfect solution for your home, start saving right away. We take care of designing , permitting, and installation all typically under 30 days start to finish!
+                                        Once you find the perfect solution for your home, start saving right away. Designing , permitting, and installation are all typically completed in 30 daysgit add!
                                     </Typography>
                                 </CardContent>
 
