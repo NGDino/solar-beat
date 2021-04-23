@@ -24,7 +24,7 @@ const HomeCards = () => {
             marginBottom: '0', // 16:9
         },
         cardStyle : {
-            minHeight: '70vh',
+            minHeight: '68vh',
             padding: '1em',
             paddingBottom: '2em',
             boxShadow: '0 5px 5px 4px',
@@ -52,7 +52,7 @@ const HomeCards = () => {
                                     <Typography gutterBottom variant='h5'>
                                         Calculate Potential Savings
                                     </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
+                                    <Typography variant="body2" color="textSecondary" >
                                         Quickly see an approximate system size, how much your tax incentive could be, and how much you could be saving per month.  Only provide your contact info if you like what you see and want more info!
                                     </Typography>
                                 </CardContent>
@@ -74,7 +74,7 @@ const HomeCards = () => {
                                     <Typography gutterBottom variant='h5'>
                                         Compare and Save
                                     </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
+                                    <Typography variant="body2" color="textSecondary" >
                                         Like what you see?  Get a personalized system designed and our solar experts can help you choose from a selection of top brands installed by top rated local installers. Choose a finance plan that works for you, including many $0 down options.  
                                     </Typography>
                                 </CardContent>
