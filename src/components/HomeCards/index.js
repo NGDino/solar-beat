@@ -18,15 +18,14 @@ const HomeCards = () => {
             marginTop: '20px'
         },
         cardContainer: {
-            padding: '1em .5em 25px .5em',
+            padding: '3em 0 4em 0',
         }, media: {
             height: '50',
-            marginBottom: '0', // 16:9
+            marginBottom: '0', // 16:9,
         },
         cardStyle : {
-            minHeight: '68vh',
-            padding: '1em',
-            paddingBottom: '2em',
+            // minHeight: '68vh',
+           
             boxShadow: '0 5px 5px 4px',
             border: '5px solid grey',
             borderRadius: 26,
@@ -37,9 +36,8 @@ const HomeCards = () => {
     const classes = useStyles()
     return(
         <Box bgcolor='secondary.light'>
-                <Grid container spacing={3} className={classes.cardContainer} align='center' justify='center' direction='row' >
-                    <Grid item xs={12} sm={6}  lg={3} >
-                        <Card className={classes.cardStyle}>
+                <Grid container spacing={2} className={classes.cardContainer} alignItems='stretch'  justify='space-evenly' direction='row' >
+                    <Grid item xs={12} sm={6} lg={3} component={Card} className={classes.cardStyle}>
                             <div >
                             <CardMedia
                                 className={classes.media}
@@ -58,11 +56,9 @@ const HomeCards = () => {
                                 </CardContent>
 
                             </div>
-                        </Card>
                     </Grid>
 
-                    <Grid item xs={12} sm={6} lg={3} >
-                        <Card className={classes.cardStyle}>
+                    <Grid item xs={12} sm={6} lg={3} component={Card} className={classes.cardStyle}>
                             <div>
                             <CardMedia
                                 className={classes.media}
@@ -80,16 +76,14 @@ const HomeCards = () => {
                                 </CardContent>
 
                             </div>
-                        </Card>
                     </Grid>
 
-                    <Grid item xs={12} sm={6} lg={3} >
-                        <Card className={classes.cardStyle}>
+                    <Grid item xs={12} sm={6} lg={3} component={Card} className={classes.cardStyle}>
                             <div>
                             <CardMedia
                                 className={classes.media}
                                 
-                                title="Calculator Illustration"><img src={ecohouse} alt='Green Energy House'/>
+                                title="Energy Efficient House"><img src={ecohouse} alt='Green Energy House'/>
                             </CardMedia>
                                 
                                 <CardContent>
@@ -102,7 +96,6 @@ const HomeCards = () => {
                                 </CardContent>
 
                             </div>
-                        </Card>
                     </Grid>
 
                 </Grid>
